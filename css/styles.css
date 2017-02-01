@@ -4,6 +4,9 @@
 
 html {
   box-sizing: border-box;
+  font-family: sans-serif;
+  line-height: 1.4;
+  color: #06064F;
 }
 *, *:before, *:after {
   box-sizing: inherit
@@ -17,11 +20,20 @@ body {
   margin: 0;
 }
 
+a {
+  color: #2E30EB;
+}
+a:visited {
+  color: #B41D04;
+}
+a:hover {
+  color: #FF4017;
+}
 a[target="_blank"]::after {
   content: "(link opens in a new window)";
   margin-left: 0.2em;
 }
-
+/*
 header {
   position: fixed;
   background-color: #2E30EB;
@@ -44,6 +56,7 @@ header a {
 main {
   padding-left: 3rem;
 }
+*/
 
 
 /*
