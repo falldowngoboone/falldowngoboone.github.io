@@ -1,0 +1,24 @@
+{
+  "name": "falldowngoboone.github.io",
+  "version": "1.0.0",
+  "description": "gh-pages for me",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node_modules/.bin/node-sass css/ -o css/",
+    "sass:watch": "node_modules/.bin/node-sass -w --output-style compressed --source-map true css/ -o css/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/falldowngoboone/falldowngoboone.github.io.git"
+  },
+  "author": "Ryan Boone <falldowngoboone@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/falldowngoboone/falldowngoboone.github.io/issues"
+  },
+  "homepage": "https://github.com/falldowngoboone/falldowngoboone.github.io#readme",
+  "devDependencies": {
+    "node-sass": "^4.5.0"
+  }
+}

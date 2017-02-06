@@ -1,0 +1,25 @@
+/*
+ * $Base
+ */
+
+/* border-box FTW */
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit
+}
+
+/* animate all the things */
+// * {
+//   transition: all 0.2s;
+// }
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding: 5rem;
+}
