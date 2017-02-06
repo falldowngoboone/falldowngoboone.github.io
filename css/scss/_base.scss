@@ -1,0 +1,26 @@
+/*
+ * $Base
+ */
+
+/* border-box FTW */
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+
+/* animate all the things */
+// * {
+//   transition: all 0.2s;
+// }
+
+body, p, ul, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+ul { padding-left: 1.25rem; }
+
+/* IE fix */
+img { width: 100%; }
+
+p, ul { margin-top: 1.375rem; }
+
+h2 + ul { margin-top: 0; }

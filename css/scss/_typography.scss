@@ -1,0 +1,33 @@
+/* 
+ * $Typography
+ */
+
+html {
+  font-family: $primary-font-stack;
+  font-weight: 400;
+  line-height: 1.375;
+  color: $text-color;
+
+  font-size: 16px;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+
+  @media screen and (min-width: 25em) {
+    font-size: calc( 100% + (20 - 16) * (100vw - 400px) / (1440 - 400)
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $secondary-font-stack;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  margin-top: 0;
+  text-align: center;
+}

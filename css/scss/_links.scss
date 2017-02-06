@@ -1,0 +1,17 @@
+/* 
+ * $Links
+ */
+
+a {
+  color: #2E30EB;
+}
+a:visited {
+  color: #B41D04;
+}
+a:hover {
+  color: #FF4017;
+}
+a[target="_blank"]::after {
+  content: "(link opens in a new window)";
+  margin-left: 0.2em;
+}
