@@ -6,59 +6,23 @@ html {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
   font-weight: 400;
   line-height: 1.4;
-  color: #06064F;
+  color: $text-color;
 
-  font-size: 20px;
-}
+  font-size: 16px;
 
-* + * {
-  margin-top: 1.4rem;
+  @media screen and (min-width: 25em) {
+    font-size: calc( 100% + (20 - 16) * (100vw - 400px) / (1440 - 400)
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "MuseoSlab", sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   font-style: normal;
   line-height: 1.1;
-  margin: 0;
-}
-
-h2 + * {
-  margin-top: 0.68rem;
-}
-
-* + h2 {
-  margin-top: 2.8rem;
-}
-
-h3 + * {
-  margin-top: 0.16rem;
-}
-
-h2 + h3 {
-  margin-top: 1.4rem;
 }
 
 h1 {
-  font-size: 4.3rem; // 86px @ 20px em
-}
-
-h2 {
-  font-size: 3.2rem; // 64px @ 20px em
-}
-
-h3 {
-  font-size: 2.4rem; // 48px @ 20px em
-}
-
-h4 {
-  font-size: 1.8rem; // 36px @ 20px em
-}
-
-h5 {
-  font-size: 1.35rem; // 27px @ 20px em
-}
-
-h6 {
-  font-size: 1rem; // 20px @ 20px em
+  margin-top: 0;
+  text-align: center;
 }

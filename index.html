@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <title>Ryan Boone | Developer/Designer</title>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
+  <header class="page-header">
     <h1>Ryan Boone</h1>
-    <nav>
-      <ul class="u-unstyled-list">
+    <nav class="nav">
+      <ul class="nav__links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Side Projects</a></li>
@@ -22,12 +24,12 @@
 
   <main>
     <h2 id="about">About</h2>
-    <p>I am a Fort Worth-based designer and developer in search of opportunities to grow and do meaningful work. I am currently obesessed with JavaScript, Standard Style, functional programming, complexity theory, and <cite>Stranger Things</cite>.</p>
+    <p>I am a Fort Worth-based designer and developer in search of opportunities to learn, grow, and do meaningful work. I am currently obesessed with JavaScript, Standard Style, functional programming, complexity theory, and <cite>Stranger Things</cite>.</p>
 
     <h2 id="experience">Experience</h2>
     <ul class="u-unstyled-list">
       <li>
-        <h3>November 2006–Present</h3>
+        <h3>November 2006&ndash;Present</h3>
         <p>Senior designer</p>
         <p>Inprov, LLC <em>Southlake, TX</em></p>
         <ul>
@@ -39,7 +41,7 @@
         </ul>
       </li>
       <li>
-        <h3>October 2015–Present</h3>
+        <h3>October 2015&ndash;Present</h3>
         <p>Owner/Freelance Web Developer and Designer</p>
         <p>fall down go boone <em>Fort Worth, TX</em></p>
         <ul>
@@ -150,7 +152,7 @@
 
       <li>
         <h3><a href="https://teamtreehouse.com/ryanboone" target="_blank">Treehouse</a></h3>
-        <p>June 2013&endash;June 2016</p>
+        <p>June 2013&ndash;June 2016</p>
         <h4>Subjects Studied</h4>
         <ul>
           <li>Web Design</li>
@@ -178,14 +180,6 @@
     <footer>© <span id="copyright-date">2017</span> Ryan Boone</footer>
   </main>
 
-  <script>
-    onload = function () {
-      const d = new Date(),
-        year = d.getFullYear(),
-        copyrightDate = document.querySelector('#copyright-date')
-
-      copyrightDate.innerText = year
-    }
-  </script>
+  <script src="js/page.js"></script>
 </body>
 </html>
