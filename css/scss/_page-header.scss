@@ -9,6 +9,22 @@
   
 }
 
+.page-header__logo {
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.page-header__title {
+  /* hide this */
+  clip: rect(1px, 1px, 1px, 1px); 
+  height: 1px; 
+  width: 1px; 
+  overflow: hidden; 
+  position: absolute !important;
+}
+
 .nav__links {
   list-style-type: none;
   padding-left: 0;
