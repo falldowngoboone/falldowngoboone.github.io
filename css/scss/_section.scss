@@ -54,6 +54,11 @@
   }
 }
 
+/* exceptions */
 .section--projects > ul li:first-child .section__img {
   margin-top: 0.8125rem;
+}
+
+.section__primary-heading + .section__secondary-heading {
+  margin-top: 1.0625rem;
 }
