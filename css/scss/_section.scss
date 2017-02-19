@@ -53,3 +53,7 @@
     display: block;
   }
 }
+
+.section--projects > ul li:first-child .section__img {
+  margin-top: 0.8125rem;
+}
