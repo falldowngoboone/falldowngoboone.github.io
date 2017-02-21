@@ -5,12 +5,36 @@
   background-color: #25396C;
   color: #ffffff;
   padding: 1.25rem 0;
+  // height: 100vh;
+  overflow-y: auto;
 }
 
 .page-header__logo {
-  width: 30%;
+  width: 5rem;
   margin-left: auto;
   margin-right: auto;
-  // margin-bottom: 2rem;
   display: block;
+}
+
+.page-header__menu-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.js .page-header {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.js .page-header.is-collapsed {
+  position: absolute;
+  height: 4.25rem;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  background-color: transparent;
 }

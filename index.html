@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="page-header">
+  <header class="page-header js-page-header is-collapsed">
     <img class="page-header__logo" src="images/rb-stacked.svg" alt="Ryan Boone">
     <h1 class="u-sr-only">Ryan Boone</h1>
     <nav class="nav">
@@ -21,17 +21,20 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+    <button class="page-header__menu-toggle js-menu-toggle">Menu</button>
   </header>
 
   <main>
-
+    
+    <a id="about" rel="bookmark"></a>
     <section class="section section--about">
-      <h2 class="section__title" id="about"><span>Hello.</span> <span>I'm&nbsp;Ryan.</span></h2>
+      <h2 class="section__title"><span>Hello.</span> <span>I'm&nbsp;Ryan.</span></h2>
       <p>I am a Fort Worth-based designer and developer in search of opportunities to grow and do meaningful work. I am currently obesessed with all things JavaScript, stupid trivia, complexity theory, and <cite>Stranger Things</cite>.</p>
     </section>
 
+    <a id="experience" rel="bookmark"></a>
     <section class="section">
-      <h2 class="section__title" id="experience">Experience</h2>
+      <h2 class="section__title">Experience</h2>
       <ul class="section__list u-unstyled-list">
         <li>
           <h3 class="section__secondary-heading">November 2006&ndash;Present</h3>
@@ -59,8 +62,8 @@
       </ul>
     </section>
 
-    <section class="section section--projects">
-      <h2 class="section__title" id="projects">Side Projects</h2>
+    <section class="section section--projects" id="projects">
+      <h2 class="section__title">Side Projects</h2>
       <ul class="section__list u-unstyled-list">
         <li>
           <img class="section__img" src="images/side-project-placeholder.png" alt="">
@@ -129,8 +132,9 @@
       </ul>
     </section>
 
+    <a id="education" rel="bookmark"></a>
     <section class="section">
-      <h2 class="section__title" id="education">Education</h2>
+      <h2 class="section__title">Education</h2>
       <ul class="section__list u-unstyled-list">
         <li>
           <h3 class="section__primary-heading"><a href="https://cs50.harvard.edu" target="_blank">CS50 (HarvardX)</a></h3>
@@ -189,8 +193,9 @@
       </ul>
     </section>
 
+    <a id="contact" rel="bookmark"></a>
     <section class="section">
-      <h2 class="section__title" id="contact">Contact</h2>
+      <h2 class="section__title">Contact</h2>
       <!-- Contact form from form spree -->
       <ul>
         <li><a href="https://github.com/falldowngoboone" target="_blank">My Github profile</a></li>
