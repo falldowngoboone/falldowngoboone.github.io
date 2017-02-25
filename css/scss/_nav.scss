@@ -11,11 +11,12 @@
     font-size: 2rem;
     font-family: "MuseoSlab";
 
-    &:hover, .is-active {
-      background-color: #fff;
-      color: $text-color;
-      border-right: solid 0.5em $text-color;
-    }
+    // activate hover styles on wider screens
+    // &:hover, .is-active {
+    //   background-color: #fff;
+    //   color: $text-color;
+    //   border-right: solid 0.5em $text-color;
+    // }
   }
 }
 

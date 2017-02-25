@@ -16,9 +16,15 @@
 }
 
 .page-header__menu-toggle {
-  position: absolute;
-  top: 0;
+  position: fixed;
+  bottom: 0;
   right: 0;
+  padding: 1.25rem;
+  background-color: white;
+  border: none;
+  margin: 0;
+  
+  -webkit-appearance: none;
 }
 
 .js .page-header {
