@@ -1,34 +1,49 @@
+/* 
+ * $Section
+ */
+
 .section {
-  margin: 0 1.25rem;
-  border-bottom: 1px solid $secondary-color;
-  padding: 2.5rem 0 2.75rem;
+  margin: 0 $sm-space;
+  border-bottom: 1px solid $primary-color--light;
+  padding: ($sm-space * 2) 0 ($lh-space * 2);
+
+  @media screen and (min-width: $mq-md) {
+    margin-left: $sm-space * 2;
+    margin-right: $sm-space * 2;
+  }
 }
 
 .section__list > li {
-  padding-top: 1.375rem;
+  padding-top: $lh-space;
 }
 
 .section__title {
   font-size: 2rem;
+  /* 
+   * line-height
+   * margin-top
+   * margin-bottom
+   */
 }
 
 .section__secondary-heading {
   font-size: 0.875rem;
-  line-height: 1.571428571428571;
+  line-height: calc(#{$line-height} / 0.875);
+  margin-top: 1.0625rem;
+  margin-bottom: -1.0625rem;
+
   font-family: $primary-font-stack;
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 0.13em;
 
-  margin-top: 1.0625rem;
-  margin-bottom: -1.0625rem;
-  color: $secondary-color;
+  color: $primary-color--light;
 }
 
 .section__primary-heading {
   font-size: 1.125rem;
-  line-height: 1.222222222222222;
-  margin-top: 1.375rem;
+  line-height: calc(#{$line-height} / 1.125);
+  margin-top: $lh-space;
 
   em {
     white-space: nowrap;
@@ -36,13 +51,19 @@
 }
 
 .section__img {
-  width: calc(100% + 2.5rem);
+  width: calc(100% + #{$sm-space * 2});
   height: auto;
-  margin: 2.75rem -1.25rem 0;
+  margin: ($lh-space * 2) ($sm-space * -1) 0;
+
+  @media screen and (min-width: $mq-md) {
+    width: calc(100% + #{$sm-space * 4});
+    margin-left: ($sm-space * -2);
+    margin-right: ($sm-space * -2);
+  }
 }
 
 .section--about {
-  background-image: url(../images/rb-headshot-sm@2x.png);
+  background-image: url(../images/rb-headshot-sm.png);
   background-color: #633730;
   background-repeat: no-repeat;
   background-size: cover;
@@ -50,10 +71,25 @@
   color: #ffffff;
 
   margin: 0;
-  padding: 10.8125rem 1.25rem 2.75rem;
+  padding: ($lh-space * 8) $sm-space ($lh-space * 2);
 
   span {
     display: block;
+  }
+  p {
+    max-width: 26em;
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2), /* Webkit-based browsers */
+        (min-resolution: 2dppx),             /* The standard way */
+        (min-resolution: 192dpi)             /* dppx fallback */ {
+          background-image: url(../images/rb-headshot-sm@2x.png);
+  }
+
+  @media screen and (min-width: $mq-md) {
+    padding-left: $sm-space * 2;
+    padding-right: $sm-space * 2;
+    padding-bottom: $lh-space * 4;
   }
 }
 
@@ -62,6 +98,6 @@
   margin-top: -0.5625rem;
 }
 
-p + .section__secondary-heading, ul + .section__secondary-heading {
-  padding-top: 1.375rem;
-}
+// p + .section__secondary-heading, ul + .section__secondary-heading {
+//   padding-top: $lh-space;
+// }

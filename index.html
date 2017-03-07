@@ -5,14 +5,15 @@
   <title>Ryan Boone | Developer/Designer</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/head.js"></script>
 </head>
 <body>
-  <header class="page-header js-page-header is-collapsed">
-    <img class="page-header__logo" src="images/rb-stacked.svg" alt="Ryan Boone">
+  <header class="page-header js-page-header">
+    <a href="#"><img class="page-header__logo" src="images/rb-stacked.svg" alt="Ryan Boone"></a>
     <h1 class="u-sr-only">Ryan Boone</h1>
-    <nav class="nav">
+    <nav class="nav js-nav">
       <ul class="nav__links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -21,7 +22,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <button class="page-header__menu-toggle js-menu-toggle">Menu</button>
+    <button class="page-header__nav-toggle js-nav-toggle">Menu</button>
   </header>
 
   <main>
@@ -66,8 +67,8 @@
       <h2 class="section__title">Side Projects</h2>
       <ul class="section__list u-unstyled-list">
         <li>
-          <img class="section__img" src="images/side-project-placeholder.png" alt="">
-          <h3 class="section__primary-heading"><a href="" target="_blank">Lists App</a></h3>
+          <img class="section__img" src="images/side-projects-lists-app.png" alt="Lists App, a React/Redux project">
+          <h3 class="section__primary-heading"><a href="https://github.com/falldowngoboone/lists-app" target="_blank">Lists App</a></h3>
           <p>A React/Redux client-based project tracking app intended for management use to track the progress of several designers department wide</p>
 
           <h4 class="section__secondary-heading">Project Goals</h4>
@@ -90,8 +91,8 @@
         </li>
 
         <li>
-          <img class="section__img" src="images/side-project-placeholder.png" alt="">
-          <h3 class="section__primary-heading"><a href="" target="_blank">Hotsheet</a></h3>
+          <img class="section__img" src="images/side-projects-job-tracker.png" alt="Job Tracker, an Angular 1.x project">
+          <h3 class="section__primary-heading"><a href="https://github.com/falldowngoboone/job-tracker" target="_blank">Job Tracker</a></h3>
           <p>A personal project tracker and to-do list built in Angular 1.x and PHP.</p>
 
           <h4 class="section__secondary-heading">Project Goals</h4>
@@ -196,7 +197,29 @@
     <a id="contact" rel="bookmark"></a>
     <section class="section">
       <h2 class="section__title">Contact</h2>
-      <!-- Contact form from form spree -->
+      
+      <!-- Refer to https://formspree.io for API documentation -->
+      <form action="https://formspree.io/falldowngoboone@gmail.com" method="POST">
+        <input type="hidden" name="_next" value="#" />
+        <input type="hidden" name="_subject" value="New submission!" />
+        <div class="input-group">
+          <label for="name">Your Name</label>
+          <input id="name" name="name" type="text" required>
+        </div>
+        <div class="input-group">
+          <label for="email">Your Email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+        <input type="text" name="_gotcha" style="display:none" />
+        <div class="input-group">
+          <label for="message">Your Message</label>
+          <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        </div>
+        <div class="input-group">
+          <button type="submit">Send your message</button>
+        </div>
+      </form>
+
       <ul>
         <li><a href="https://github.com/falldowngoboone" target="_blank">My Github profile</a></li>
         <li><a href="http://codepen.io/falldowngoboone/" target="_blank">My Codepen profile</a></li>

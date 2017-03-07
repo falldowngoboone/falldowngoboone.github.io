@@ -1,5 +1,24 @@
-$text-color: #06064F;
-$secondary-color: #7D7D9C;
+// Colors
+$primary-color: #06064F;
+$primary-color--light: #7D7D9C;
+$primary-background-color: #25396C;
 
+$text-color: $primary-color;
+$link-color: #2E30EB;
+$link-color--hover: #FF4017;
+
+// Fonts
+$base-font-size: 16px;
 $primary-font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $secondary-font-stack: "MuseoSlab", sans-serif;
+
+// Media Queries
+$mq-md: 37.5rem;
+
+// Appearance
+$radius: 3px;
+
+// Spacing
+$line-height: 1.375;
+$lh-space: $line-height * 1rem;
+$sm-space: 1.25rem;

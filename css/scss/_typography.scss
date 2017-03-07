@@ -5,10 +5,10 @@
 html {
   font-family: $primary-font-stack;
   font-weight: 400;
-  line-height: 1.375;
+  line-height: $line-height;
   color: $text-color;
 
-  font-size: 16px;
+  font-size: $base-font-size;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
@@ -21,7 +21,7 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $secondary-font-stack;
-  font-weight: 700;
+  font-weight: 500;
   font-style: normal;
   line-height: 1.1;
   letter-spacing: -0.01em;

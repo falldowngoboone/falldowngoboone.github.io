@@ -3,15 +3,11 @@
  */
 
 a {
-  color: #2E30EB;
-}
-a:visited {
-  color: #B41D04;
+  color: $link-color;
 }
 a:hover {
-  color: #FF4017;
+  color: $link-color--hover;
 }
 a[target="_blank"]::after {
-  content: "(link opens in a new window)";
-  margin-left: 0.2em;
+  content: " (new window)";
 }

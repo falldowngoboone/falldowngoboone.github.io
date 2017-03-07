@@ -2,10 +2,46 @@
  * $Header
  */
 .page-header {
-  background-color: #25396C;
+  padding: $sm-space 0 ($sm-space * 4);
+  overflow-x: hidden;
   color: #ffffff;
-  padding: 1.25rem 0;
-  overflow-y: auto;
+
+  background-color: $primary-background-color;
+}
+
+.js .page-header {
+  position: absolute;
+  padding-bottom: $sm-space;
+  z-index: 1;
+  left: 0;
+  right: 0;
+
+  background-color: transparent;
+}
+
+.page-header.is-transitioning,
+.page-header.is-open {
+  height: 100vh;
+  position: fixed;
+}
+
+.page-header.is-transitioning {
+  transform: none !important;
+}
+
+.page-header.is-sticky {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  transition: transform 0.2s;
+}
+
+.page-header.is-sticky.is-hidden {
+  transform: translateY(-100%);
+
+  transition: transform 0.2s;
 }
 
 .page-header__logo {
@@ -15,30 +51,27 @@
   display: block;
 }
 
-.page-header__menu-toggle {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  padding: 1.25rem;
-  background-color: white;
+.page-header__nav-toggle {
+  display: none;
+}
+
+.js .page-header__nav-toggle {
+  -webkit-appearance: none;
+
+  display: block;
+  position: absolute;
+  top: $lh-space;
+  left: $sm-space;
+  padding: $sm-space / 2;
+  background-color: #ffffff;
   border: none;
   margin: 0;
-  
-  -webkit-appearance: none;
+  font-size: inherit;
+  color: $text-color;
+  border-radius: $radius;
 }
 
-.js .page-header {
-  position: fixed;
-  width: 100%;
-  left: 0;
-  top: 0;
-  bottom: 0;
-}
-
-.js .page-header.is-collapsed {
-  position: absolute;
-  left: 0;
-  right: 0;
-  overflow: hidden;
-  background-color: transparent;
+.is-sticky .page-header__nav-toggle {
+  color: #ffffff;
+  background-color: $primary-background-color;
 }
