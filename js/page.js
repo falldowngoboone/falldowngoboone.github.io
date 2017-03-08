@@ -67,7 +67,7 @@ onload = function () {
       pageHeader.classList.remove('is-hidden')
     }
 
-    // well, this _could_ use trigger, but IE doesn't support the 2nd argument
+    // well, this _could_ use toggle, but IE doesn't support the 2nd argument
     if ( currentScrollY > scrollTriggerOffset ) {
       pageHeader.classList.add('is-sticky')
     }
