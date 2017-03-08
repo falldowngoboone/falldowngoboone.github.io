@@ -6,10 +6,14 @@
 html { box-sizing: border-box; }
 *, *::before, *::after { box-sizing: inherit; }
 
-/* animate all the things */
-// * {
-//   transition: all 0.2s;
-// }
+textarea { resize: none; }
+
+input, textarea {
+  line-height: inherit;
+  font-size: inherit;
+}
+
+label + input, label + textarea { margin-top: $lh-space; }
 
 body, p, ul, h1, h2, h3, h4, h5, h6 {
   margin: 0;
