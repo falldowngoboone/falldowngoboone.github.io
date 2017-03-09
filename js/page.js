@@ -60,7 +60,7 @@ onload = function () {
 
     ticking = false
 
-    if (changeInScrollPos < 0 && currentScrollY > 0 && !navIsOpen) {
+    if (changeInScrollPos < -(triggerThreshold / 2) && currentScrollY > 0 && !navIsOpen) {
       pageHeader.classList.add('is-hidden')
     }
     else if (changeInScrollPos > triggerThreshold || window.scrollY <= 0) {
@@ -68,10 +68,10 @@ onload = function () {
     }
 
     // well, this _could_ use toggle, but IE doesn't support the 2nd argument
-    if ( currentScrollY > scrollTriggerOffset ) {
+    if (currentScrollY > scrollTriggerOffset) {
       pageHeader.classList.add('is-sticky')
     }
-    else if ( currentScrollY <= scrollTriggerOffset ) {
+    else if (currentScrollY <= scrollTriggerOffset) {
       pageHeader.classList.remove('is-sticky')
     }
   }
