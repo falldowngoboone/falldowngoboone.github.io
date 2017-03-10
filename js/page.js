@@ -2,6 +2,7 @@ onload = function () {
   var pageHeader = document.querySelector('.js-page-header'),
       nav = document.querySelector('.js-nav'),
       navToggleBtn = document.querySelector('.js-nav-toggle'),
+      headerOffset = document.querySelector('[data-header-offset]'),
 
       currentScrollY = 0,
       previousScrollY,
@@ -56,7 +57,7 @@ onload = function () {
   function togglePageHeaderHideClass () {
     const changeInScrollPos = previousScrollY - currentScrollY,
           triggerThreshold = 5,
-          scrollTriggerOffset = 300
+          offset = headerOffset.offsetTop
 
     ticking = false
 
@@ -68,11 +69,11 @@ onload = function () {
     }
 
     // well, this _could_ use toggle, but IE doesn't support the 2nd argument
-    if (currentScrollY > scrollTriggerOffset) {
-      pageHeader.classList.add('is-sticky')
+    if (currentScrollY > offset) {
+      pageHeader.classList.add('is-past-offset')
     }
-    else if (currentScrollY <= scrollTriggerOffset) {
-      pageHeader.classList.remove('is-sticky')
+    else if (currentScrollY <= offset) {
+      pageHeader.classList.remove('is-past-offset')
     }
   }
 }
