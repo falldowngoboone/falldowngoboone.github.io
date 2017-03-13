@@ -37,10 +37,29 @@
 }
 
 .page-header__logo {
-  width: 5rem;
+  width: 50px;
+  height: 50px;
   margin-left: auto;
   margin-right: auto;
   display: block;
+  fill: #ffffff;
+  color: transparent;
+
+  transition: fill 0.2s, color 0.2s;
+
+  @media screen and (min-width: $mq-md) {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+.is-past-offset .page-header__logo {
+  fill: $primary-background-color;
+  color: #ffffff;
+}
+
+.bg-circle {
+  fill: currentColor;
 }
 
 .page-header__nav-toggle {
@@ -68,4 +87,9 @@
 .is-past-offset .page-header__nav-toggle {
   color: #ffffff;
   background-color: $primary-background-color;
+}
+
+.is-past-offset.is-open .page-header__nav-toggle {
+  color: $text-color;
+  background-color: #ffffff;
 }
