@@ -2,22 +2,22 @@
  * $Nav
  */
 .js .nav {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100vh;
-  left: 0;
+  right: 0;
   top: 0;
   z-index: -1;
   overflow-y: auto;
   padding-top: $lh-space * 4;
   background-color: $primary-background-color;
-  transform: translateX(-100%);
+  transform: translateY(100%);
 
   transition: transform 0.2s;
 }
 
 .is-open .nav {
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 .nav__links {
@@ -30,14 +30,14 @@
     text-decoration: none;
     display: block;
     padding: 0.5em $sm-space;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: "MuseoSlab";
 
     // activate hover styles on wider screens
-    // &:hover, .is-active {
-    //   background-color: #fff;
-    //   color: $text-color;
-    //   border-right: solid 0.5em $text-color;
-    // }
+    :root:not(.ios) &:hover, .is-active {
+      background-color: #fff;
+      color: $text-color;
+      border-right: solid 0.5em $text-color;
+    }
   }
 }

@@ -3,7 +3,6 @@
  */
 .page-header {
   padding: $sm-space 0 ($sm-space * 4);
-  overflow-x: hidden;
   color: #ffffff;
 
   background-color: $primary-background-color;
@@ -12,20 +11,14 @@
 .js .page-header {
   position: fixed;
   width: 100%;
-  padding-bottom: $sm-space;
+  padding: 8px 0;
   z-index: 1;
   left: 0;
   right: 0;
 
   background-color: transparent;
 
-  transition: transform 0.2s;
-}
-
-.page-header.is-transitioning,
-.page-header.is-open {
-  height: 100vh;
-  position: fixed;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
 .page-header.is-transitioning {
@@ -36,26 +29,36 @@
   transform: translateY(-100%);
 }
 
+.page-header.is-past-offset {
+  background-color: $primary-background-color;
+}
+
 .page-header__logo {
-  width: 50px;
-  height: 50px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 58px;
+  height: 58px;
+  margin: auto;
   display: block;
   fill: #ffffff;
   color: transparent;
+  transform-origin: top center;
 
-  transition: fill 0.2s, color 0.2s;
+  transition: all 0.2s;
 
   @media screen and (min-width: $mq-md) {
-    width: 75px;
-    height: 75px;
+    
   }
 }
 
-.is-past-offset .page-header__logo {
-  fill: $primary-background-color;
-  color: #ffffff;
+.is-past-offset .page-header__logo { 
+  width: 40px;
+  height: 40px;
+}
+
+.is-open .page-header__logo {
+  fill: #ffffff;
+  color: transparent;
+  width: 58px;
+  height: 58px;
 }
 
 .bg-circle {
@@ -67,29 +70,61 @@
 }
 
 .js .page-header__nav-toggle {
-  -webkit-appearance: none;
-
   display: block;
   position: absolute;
-  top: $lh-space;
-  left: $sm-space;
-  padding: $sm-space / 2;
-  background-color: #ffffff;
-  border: none;
+  top: 0;
+  right: ($sm-space / 2);
+  padding: 28px ($sm-space / 2);
   margin: 0;
-  font-size: inherit;
-  color: $text-color;
-  border-radius: $radius;
 
-  transition: background-color 0.2s;
+  span, span::before, span::after {
+    display: block;
+    width: 36px;
+    height: 2px;
+    background-color: #ffffff;
+    top: 0;
+    left: 0;
+
+    transition: background-color 0.2s, transform 0.2s;
+  }
+
+  span {
+    position: relative;
+  }
+
+  span::before, span::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  span::before {
+    transform: translateY(-0.75rem);
+  }
+
+  span::after {
+    transform: translateY(0.75rem);
+  }
+
+  @media screen and (min-width: $mq-md) {
+    right: $sm-space * 2;
+  }
 }
 
-.is-past-offset .page-header__nav-toggle {
-  color: #ffffff;
-  background-color: $primary-background-color;
-}
+.is-open .page-header__nav-toggle {
+  span {
+    background-color: transparent;
+  }
 
-.is-past-offset.is-open .page-header__nav-toggle {
-  color: $text-color;
-  background-color: #ffffff;
+  span::before, span::after {
+    transform: translateY(0);
+  }
+
+  span::before {
+    transform: rotate(45deg);
+  }
+  span::after {
+    transform: rotate(-45deg);
+  }
 }

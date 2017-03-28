@@ -7,26 +7,28 @@ onload = function () {
       currentScrollY = 0,
       previousScrollY,
       ticking = false,
-      navIsOpen = nav.classList.contains('is-open')
+      navIsOpen = nav.classList.contains('is-open'),
+      keepHeaderOpen = false
 
   // make sure copyright is always up-to-date
   document.querySelector('#copyright-date')
     .innerText = (new Date()).getFullYear()
 
   // event listeners
-  navToggleBtn.addEventListener('click', toggleNavOpenClass)
   pageHeader.addEventListener('click', function closeMenuOnLinkClick (e) {
-    if (e.target.nodeName === 'A' ) {
+    if (e.target.isEqualNode(navToggleBtn) || e.target.parentElement.isEqualNode(navToggleBtn)) {
+      e.preventDefault()
+    }
+    if (e.target.nodeName === 'A' || e.target.parentElement.nodeName === 'A' ) {
       toggleNavOpenClass()
     }
-  })
+  }, false)
+
   nav.addEventListener('transitionend', function removeTransitionClass (e) {
     pageHeader.classList.remove('is-transitioning')
-    if (!navIsOpen) {
-      pageHeader.classList.add('is-hidden')
-    }
-  })
-  window.addEventListener('scroll', onScroll)
+  }, false)
+
+  window.addEventListener('scroll', onScroll, false)
 
   function toggleNavOpenClass () {
     if (navIsOpen) {
@@ -57,16 +59,16 @@ onload = function () {
   function togglePageHeaderHideClass () {
     const changeInScrollPos = previousScrollY - currentScrollY,
           triggerThreshold = 5,
-          offset = headerOffset.offsetTop
+          offset = 0
 
     ticking = false
 
-    if (changeInScrollPos < -(triggerThreshold / 2) && currentScrollY > 0 && !navIsOpen) {
-      pageHeader.classList.add('is-hidden')
-    }
-    else if (changeInScrollPos > triggerThreshold || window.scrollY <= 0) {
-      pageHeader.classList.remove('is-hidden')
-    }
+    // if (changeInScrollPos < -(triggerThreshold / 2) && currentScrollY > 0 && !navIsOpen && !pageHeader.classList.contains('is-transitioning')) {
+    //   pageHeader.classList.add('is-hidden')
+    // }
+    // else if (changeInScrollPos > triggerThreshold || window.scrollY <= 0) {
+    //   pageHeader.classList.remove('is-hidden')
+    // }
 
     // well, this _could_ use toggle, but IE doesn't support the 2nd argument
     if (currentScrollY > offset) {

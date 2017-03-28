@@ -23,7 +23,7 @@ body, p, ul, h1, h2, h3, h4, h5, h6 {
 ul { padding-left: $sm-space; }
 
 /* IE fix */
-img { width: 100%; }
+img, svg { width: 100%; }
 
 p, ul { margin-top: $lh-space; }
 

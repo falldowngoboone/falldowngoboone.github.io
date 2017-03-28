@@ -5,7 +5,7 @@
 a {
   color: $link-color;
 }
-a:hover {
+:root:not(.ios) a:hover {
   color: $link-color--hover;
 }
 a[target="_blank"]::after {
