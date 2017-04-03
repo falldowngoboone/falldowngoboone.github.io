@@ -100,11 +100,11 @@
   }
 
   span::before {
-    transform: translateY(-0.75rem);
+    transform: translateY(-12px);
   }
 
   span::after {
-    transform: translateY(0.75rem);
+    transform: translateY(12px);
   }
 
   @media screen and (min-width: $mq-md) {

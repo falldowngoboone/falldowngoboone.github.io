@@ -14,8 +14,8 @@ html {
   -ms-hyphens: auto;
   hyphens: auto;
 
-  @media screen and (min-width: 25em) {
-    font-size: calc( 100% + (20 - 16) * (100vw - 400px) / (1440 - 400)
+  @media screen and (min-width: 400px) {
+    font-size: calc(100% + 0.5vw);
   }
 }
 

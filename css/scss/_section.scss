@@ -3,13 +3,16 @@
  */
 
 .section {
-  margin: 0 $sm-space;
+  margin: 0 auto;
+  width: 90vw;
   border-bottom: 1px solid $primary-color--light;
   padding: ($sm-space * 2) 0 ($lh-space * 2);
 
   @media screen and (min-width: $mq-md) {
-    margin-left: $sm-space * 2;
-    margin-right: $sm-space * 2;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    max-width: 60rem;
   }
 }
 
@@ -69,27 +72,45 @@
   background-size: cover;
   background-position: 50% 50%;
   color: #ffffff;
+  width: 100%;
+  max-width: 100%;
 
-  margin: 0;
-  padding: ($lh-space * 8) $sm-space ($lh-space * 2);
-
-  span {
-    display: block;
-  }
-  p {
-    max-width: 26em;
-  }
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: ($lh-space * 8);
+  padding-bottom: ($lh-space * 2);
 
   @media (-webkit-min-device-pixel-ratio: 2), /* Webkit-based browsers */
-        (min-resolution: 2dppx),             /* The standard way */
-        (min-resolution: 192dpi)             /* dppx fallback */ {
-          background-image: url(../images/rb-headshot-sm@2x.png);
+         (min-resolution: 2dppx), /* The standard way */
+         (min-resolution: 192dpi) /* dppx fallback */ {
+    background-image: url(../images/rb-headshot-sm@2x.png);
   }
 
   @media screen and (min-width: $mq-md) {
-    padding-left: $sm-space * 2;
-    padding-right: $sm-space * 2;
-    padding-bottom: $lh-space * 4;
+    background-image: url(../images/rb-headshot-md.png)
+  }
+
+  @media screen and (min-width: $mq-md) and (-webkit-min-device-pixel-ratio: 2),
+         screen and (min-width: $mq-md) and (min-resolution: 2dppx),
+         screen and (min-width: $mq-md) and (min-resolution: 192dpi) {
+    background-image: url(../images/rb-headshot-md@2x.png);
+  }
+}
+
+.section--about span {
+  display: block;
+}
+
+.section--about > * {
+  max-width: 26rem;
+  padding: 0 5vw;
+
+  @media screen and (min-width: $mq-md) {
+    padding-left: 40vw;
+    padding-right: 10vw;
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -97,7 +118,3 @@
 .section--projects > ul li:first-child .section__img {
   margin-top: -0.5625rem;
 }
-
-// p + .section__secondary-heading, ul + .section__secondary-heading {
-//   padding-top: $lh-space;
-// }
