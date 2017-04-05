@@ -13,12 +13,13 @@ $primary-font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $secondary-font-stack: "MuseoSlab", sans-serif;
 
 // Media Queries
-$mq-md: 37.5rem;
+$mq-md: 42.5em;
+$md-lg: 60em;
 
 // Appearance
 $radius: 3px;
 
 // Spacing
-$line-height: 1.375;
+$line-height: 1.5;
 $lh-space: $line-height * 1rem;
 $sm-space: 1.25rem;

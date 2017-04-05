@@ -19,6 +19,10 @@
   background-color: transparent;
 
   transition: transform 0.2s, background-color 0.2s;
+
+  @media screen and (min-width: $mq-md) {
+    padding: 16px 0;
+  }
 }
 
 .page-header.is-transitioning {
@@ -45,13 +49,19 @@
   transition: all 0.2s;
 
   @media screen and (min-width: $mq-md) {
-    
+    width: 72px;
+    height: 72px;
   }
 }
 
 .is-past-offset .page-header__logo { 
   width: 40px;
   height: 40px;
+
+  @media screen and (min-width: $mq-md) {
+    width: 58px;
+    height: 58px;
+  }
 }
 
 .is-open .page-header__logo {
@@ -59,6 +69,11 @@
   color: transparent;
   width: 58px;
   height: 58px;
+
+  @media screen and (min-width: $mq-md) {
+    width: 72px;
+    height: 72px;
+  }
 }
 
 .bg-circle {
@@ -109,6 +124,7 @@
 
   @media screen and (min-width: $mq-md) {
     right: $sm-space * 2;
+    top: $sm-space / 2;
   }
 }
 

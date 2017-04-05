@@ -15,7 +15,7 @@ html {
   hyphens: auto;
 
   @media screen and (min-width: 400px) {
-    font-size: calc(100% + 0.5vw);
+    font-size: calc(100% + 0.3vw);
   }
 }
 
@@ -23,7 +23,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $secondary-font-stack;
   font-weight: 500;
   font-style: normal;
-  line-height: 1.1;
+  line-height: $line-height * 0.8;
   letter-spacing: -0.01em;
 }
 
