@@ -59,7 +59,7 @@
 
   @media screen and (min-width: $mq-md) {
     padding-left: 300 / 18.88 * 1rem;
-    max-width: 768 / 18.88 * 1rem;
+    max-width: 768 / 18.88 * 1rem; // 768 is 80vw of 960, and 18.88px is 1rem at 960
     margin-left: auto;
     margin-right: auto;
   }

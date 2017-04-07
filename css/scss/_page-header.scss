@@ -6,6 +6,17 @@
   color: #ffffff;
 
   background-color: $primary-background-color;
+
+  @media screen and (min-width: $mq-lg) {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    padding: 30px 0;
+
+    background-color: transparent;
+  }
 }
 
 .js .page-header {
@@ -51,6 +62,10 @@
   @media screen and (min-width: $mq-md) {
     width: 72px;
     height: 72px;
+  }
+
+  @media screen and (min-width: $mq-lg) {
+    margin-left: 37px;
   }
 }
 
@@ -125,6 +140,10 @@
   @media screen and (min-width: $mq-md) {
     right: $sm-space * 2;
     top: $sm-space / 2;
+  }
+
+  @media screen and (min-width: $mq-lg) {
+    display: none;
   }
 }
 
