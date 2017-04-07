@@ -14,10 +14,26 @@
   transform: translateY(100%);
 
   transition: transform 0.2s;
+
+  @media screen and (min-width: $mq-lg) {
+    position: relative;
+    transform: none;
+    width: initial;
+    height: initial;
+    padding: 0;
+
+    background-color: transparent;
+  }
 }
 
 .is-open .nav {
   transform: translateY(0);
+}
+
+.is-past-offset .nav, .is-open .nav { 
+  @media screen and (min-width: $mq-lg) {
+    transform: translateY(7px); 
+  }
 }
 
 .nav__links {
@@ -29,7 +45,7 @@
     display: flex;
     padding-right: 37px;
     margin-top: 0;
-    border-bottom: 7px solid $text-color;
+    border-bottom: 7px solid transparent;
   }
 }
 

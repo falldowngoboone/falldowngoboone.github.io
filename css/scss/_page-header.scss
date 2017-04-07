@@ -22,17 +22,17 @@
 .js .page-header {
   position: fixed;
   width: 100%;
-  padding: 8px 0;
+  padding: 0;
   z-index: 1;
+  top: 0;
   left: 0;
-  right: 0;
 
   background-color: transparent;
 
-  transition: transform 0.2s, background-color 0.2s;
+  transition: transform 0.2s, background-color 0.2s, padding 0.2s;
 
-  @media screen and (min-width: $mq-md) {
-    padding: 16px 0;
+  @media screen and (min-width: $mq-lg) {
+    padding: 30px 0;
   }
 }
 
@@ -40,12 +40,13 @@
   transform: none !important;
 }
 
-.page-header.is-hidden {
-  transform: translateY(-100%);
-}
-
 .page-header.is-past-offset {
   background-color: $primary-background-color;
+  padding: 0;
+
+  @media screen and (min-width: $mq-lg) {
+    border-bottom: 7px solid $text-color;
+  }
 }
 
 .page-header__logo {
@@ -69,6 +70,19 @@
   }
 }
 
+.js .page-header__logo {
+  margin: 8px auto;
+
+  @media screen and (min-width: $mq-md) {
+    margin: 16px auto;
+  }
+
+  @media screen and (min-width: $mq-lg) {
+    margin: auto auto auto 37px;
+    padding: 0;
+  }
+}
+
 .is-past-offset .page-header__logo { 
   width: 40px;
   height: 40px;
@@ -88,6 +102,11 @@
   @media screen and (min-width: $mq-md) {
     width: 72px;
     height: 72px;
+  }
+
+  @media screen and (min-width: $mq-lg) {
+    width: 58px;
+    height: 58px;
   }
 }
 

@@ -63,13 +63,6 @@ onload = function () {
 
     ticking = false
 
-    // if (changeInScrollPos < -(triggerThreshold / 2) && currentScrollY > 0 && !navIsOpen && !pageHeader.classList.contains('is-transitioning')) {
-    //   pageHeader.classList.add('is-hidden')
-    // }
-    // else if (changeInScrollPos > triggerThreshold || window.scrollY <= 0) {
-    //   pageHeader.classList.remove('is-hidden')
-    // }
-
     // well, this _could_ use toggle, but IE doesn't support the 2nd argument
     if (currentScrollY > offset) {
       pageHeader.classList.add('is-past-offset')

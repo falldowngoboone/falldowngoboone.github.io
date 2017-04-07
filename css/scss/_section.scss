@@ -39,7 +39,10 @@
   }
 
   @media screen and (min-width: $mq-md) {
-    background-image: url(../images/rb-headshot-md.png)
+    background-image: url(../images/rb-headshot-md.png);
+
+    padding-top: 25vw;
+    padding-bottom: 10vw;
   }
 
   @media screen and (min-width: $mq-md) and (-webkit-min-device-pixel-ratio: 2),
@@ -51,9 +54,14 @@
 
 .section--about span {
   display: block;
+
+  @media screen and (min-width: $mq-md) {
+    display: inline;
+  }
 }
 
 .section--about > * {
+  width: 90vw;
   max-width: 26rem;
   padding: 0 5vw;
 
@@ -62,6 +70,10 @@
     max-width: 768 / 18.88 * 1rem; // 768 is 80vw of 960, and 18.88px is 1rem at 960
     margin-left: auto;
     margin-right: auto;
+  }
+
+  @media screen and (min-width: $mq-lg) {
+    padding-right: 0;
   }
 }
 
