@@ -106,6 +106,10 @@
   color: $primary-color--light;
 }
 
+section:not(.section--experience) .section__secondary-heading {
+  margin-top: 0.5rem;
+}
+
 .section__primary-heading {
   font-size: 1.125rem;
   line-height: calc(#{$line-height} / 1.125);
