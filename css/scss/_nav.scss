@@ -30,7 +30,7 @@
   transform: translateY(0);
 }
 
-.is-past-offset .nav, .is-open .nav { 
+.is-past-offset .nav, .is-past-offset.is-open .nav { 
   @media screen and (min-width: $mq-lg) {
     transform: translateY(7px); 
   }

@@ -2,13 +2,11 @@ onload = function () {
   var pageHeader = document.querySelector('.js-page-header'),
       nav = document.querySelector('.js-nav'),
       navToggleBtn = document.querySelector('.js-nav-toggle'),
-      headerOffset = document.querySelector('[data-header-offset]'),
 
       currentScrollY = 0,
       previousScrollY,
       ticking = false,
-      navIsOpen = nav.classList.contains('is-open'),
-      keepHeaderOpen = false
+      navIsOpen = nav.classList.contains('is-open')
 
   // make sure copyright is always up-to-date
   document.querySelector('#copyright-date')
@@ -18,8 +16,9 @@ onload = function () {
   pageHeader.addEventListener('click', function closeMenuOnLinkClick (e) {
     if (e.target.isEqualNode(navToggleBtn) || e.target.parentElement.isEqualNode(navToggleBtn)) {
       e.preventDefault()
+      toggleNavOpenClass()
     }
-    if (e.target.nodeName === 'A' || e.target.parentElement.nodeName === 'A' ) {
+    else if ( (navIsOpen && isLinkOrChildOfLinkEl(e.target)) ) {
       toggleNavOpenClass()
     }
   }, false)
@@ -69,6 +68,22 @@ onload = function () {
     }
     else if (currentScrollY <= offset) {
       pageHeader.classList.remove('is-past-offset')
+    }
+  }
+
+  function isLinkOrChildOfLinkEl(el) {
+    if (isLink(el)) {
+      return true
+    }
+    else if (el.parentNode) {
+      return isLinkOrChildOfLinkEl(el.parentNode)
+    }
+    else {
+      return false
+    }
+
+    function isLink (element) {
+      return element.nodeName && element.nodeName === 'A'
     }
   }
 }
