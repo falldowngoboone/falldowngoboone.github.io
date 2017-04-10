@@ -103,7 +103,9 @@
     width: 72px;
     height: 72px;
   }
+}
 
+.is-open.is-past-offset .page-header__logo {
   @media screen and (min-width: $mq-lg) {
     width: 58px;
     height: 58px;
