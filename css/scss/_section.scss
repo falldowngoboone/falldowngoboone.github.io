@@ -18,7 +18,7 @@
 }
 
 .section--about {
-  background-image: url(../images/rb-headshot-sm.png);
+  background-image: url(../images/rb-headshot-sm.jpg);
   background-color: #633730;
   background-repeat: no-repeat;
   background-size: cover;
@@ -35,11 +35,11 @@
   @media (-webkit-min-device-pixel-ratio: 2), /* Webkit-based browsers */
          (min-resolution: 2dppx), /* The standard way */
          (min-resolution: 192dpi) /* dppx fallback */ {
-    background-image: url(../images/rb-headshot-sm@2x.png);
+    background-image: url(../images/rb-headshot-sm@2x.jpg);
   }
 
   @media screen and (min-width: $mq-md) {
-    background-image: url(../images/rb-headshot-md.png);
+    background-image: url(../images/rb-headshot-md.jpg);
 
     padding-top: 25vw;
     padding-bottom: 10vw;
@@ -48,7 +48,20 @@
   @media screen and (min-width: $mq-md) and (-webkit-min-device-pixel-ratio: 2),
          screen and (min-width: $mq-md) and (min-resolution: 2dppx),
          screen and (min-width: $mq-md) and (min-resolution: 192dpi) {
-    background-image: url(../images/rb-headshot-md@2x.png);
+    background-image: url(../images/rb-headshot-md@2x.jpg);
+  }
+
+  @media screen and (min-width: $mq-lg) {
+    background-image: url(../images/rb-headshot-lg.jpg);
+
+    padding-top: 25vw;
+    padding-bottom: 10vw;
+  }
+
+  @media screen and (min-width: $mq-lg) and (-webkit-min-device-pixel-ratio: 2),
+         screen and (min-width: $mq-lg) and (min-resolution: 2dppx),
+         screen and (min-width: $mq-lg) and (min-resolution: 192dpi) {
+    background-image: url(../images/rb-headshot-lg@2x.jpg);
   }
 }
 
