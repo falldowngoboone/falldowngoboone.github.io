@@ -7,8 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "node-sass css/ -o css/",
     "sass:watch": "node-sass -w --output-style compressed --source-map true css/ -o css/",
-    "serve": "browser-sync start --server --tunnel --files \"**/*.css\" \"**/*.html\" \"**/*.js\"",
-    "start": "npm-run-all -p sass:watch serve"
+    "serve": "browser-sync start --server --files \"**/*.css\" \"**/*.html\" \"**/*.js\"",
+    "serve:tunnel": "browser-sync start --server --tunnel --files \"**/*.css\" \"**/*.html\" \"**/*.js\"",
+    "start": "npm-run-all -p sass:watch serve",
+    "start:tunnel": "npm-run-all -p sass:watch serve:tunnel"
   },
   "repository": {
     "type": "git",
