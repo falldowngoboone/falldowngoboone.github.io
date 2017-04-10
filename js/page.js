@@ -58,7 +58,7 @@ onload = function () {
   function togglePageHeaderHideClass () {
     const changeInScrollPos = previousScrollY - currentScrollY,
           triggerThreshold = 5,
-          offset = 0
+          offset = pageHeader.offsetHeight
 
     ticking = false
 
