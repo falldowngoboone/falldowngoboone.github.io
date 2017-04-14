@@ -10,6 +10,8 @@
   <script src="js/head.js"></script>
 </head>
 <body>
+  <!-- top anchor -->
+  <a id="top" rel="bookmark"></a>
 
   <!-- SVG symbols -->
   <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
@@ -30,7 +32,7 @@
   
     <h1 class="u-sr-only">Ryan Boone</h1>
 
-    <a class="page-header__logo" href="#">
+    <a class="page-header__logo" href="#top">
       <svg  viewbox="0 0 200 200">
         <title>Ryan Boone, Developer</title>
         <use xlink:href="#rb-logo-bug" x="0" y="0" />
@@ -43,7 +45,7 @@
     <!-- nav menu -->
     <nav class="nav js-nav">
       <ul class="nav__links">
-        <li><a href="#about">About</a></li>
+        <li><a href="#about" class="is-active">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Side Projects</a></li>
         <li><a href="#education">Education</a></li>
@@ -91,7 +93,8 @@
       </ul>
     </section>
 
-    <section class="section section--projects" id="projects">
+    <a id="projects" rel="bookmark"></a>
+    <section class="section section--projects">
       <h2 class="section__title">Side Projects</h2>
       <ul class="section__list u-unstyled-list">
         <li>
