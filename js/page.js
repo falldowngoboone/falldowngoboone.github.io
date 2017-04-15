@@ -4,6 +4,7 @@ onload = function () {
       nav = document.querySelector('.js-nav'),
       // $TODO - change to all internal links???
       navLinks = nav.querySelectorAll('a'),
+      bookmarks = document.querySelectorAll('a[rel="bookmark"]'),
       navToggleBtn = document.querySelector('.js-nav-toggle'),
 
       // page state...yikes!
@@ -13,45 +14,42 @@ onload = function () {
       navIsOpen = nav.classList.contains('is-open'),
       currentSection = {},
       activeTargetOffset = 75,
-      targetConfig = {
-        bookmarks: updateSectionOffsetList(navLinks),
-        offset: activeTargetOffset
-      }
+      bookmarkIds = ['#about', '#experience', '#projects', '#education', '#contact'],
+      offsetMap = createOffsetMap(bookmarkIds)
 
-  // make sure copyright is always up-to-date
-  // $TODO - create setCopyrightDate(el) function for better clarity
+
   document.querySelector('#copyright-date')
     .innerText = (new Date()).getFullYear()
-
 
 
   /* EVENTS *******************************************************************/
 
   pageHeader.addEventListener('click', function handlePageHeaderClick (e) {
-    // $TODO - should only prevent default is the link is internal
-    e.preventDefault()
 
-    const linkEl = getNearestLinkAncestor(e.target),
-          bookmarks = targetConfig.bookmarks, // Array{id:String, element:HTMLElement}
-          offset = targetConfig.offset
+    const linkEl = getNearestLinkAncestor(e.target)
 
-    if (linkEl.isEqualNode(navToggleBtn)) {
+    if (linkEl === undefined || 
+        linkEl.origin + linkEl.pathname !== window.location.origin + window.location.pathname) {
+      return
+    }
+    else if (linkEl.isEqualNode(navToggleBtn)) {
       toggleNavOpenClass()
     }
-
     // something screwy here when the URL has a hash... (ex. localhost:3000#experience)
     // target is always expereience link for whatever reason
-    else if (linkEl !== undefined) {
-      const bookmark = findInArray(bookmarks, function(target) {
-        return target.id === linkEl.hash
+    else {
+      const bookmark = findInArray(bookmarks, function(b) {
+        return b.id === linkEl.hash.slice(1)
       })
 
-      scrollToBookmark(bookmark.id, offset)
+      window.scroll(0, getOffsetTop(bookmark) - activeTargetOffset)
 
       if ( navIsOpen ) {
         toggleNavOpenClass()
       }
     }
+
+    e.preventDefault()
   }, false)
 
   nav.addEventListener('transitionend', function handleNavTransitionEnd (e) {
@@ -59,6 +57,9 @@ onload = function () {
   }, false)
 
   window.addEventListener('scroll', onScroll, false)
+  window.addEventListener('resize', function updateOffsetMap () {
+    offsetMap = createOffsetMap(bookmarkIds)
+  })
 
   /* END EVENTS ***************************************************************/
 
@@ -111,8 +112,8 @@ onload = function () {
     if (!ticking) {
       requestAnimationFrame(function handleScroll () {
         // all scroll-related functions go here
-        togglePageHeaderPastOffsetClass()
-        detectActiveTargetAndAdjustStyle(targetConfig)
+        toggleClassPastOffset()
+        makeCurrentLinkActive()
 
         // after executing the code, we reset ticking state
         ticking = false
@@ -124,9 +125,11 @@ onload = function () {
   }
 
   /*
-   * togglePageHeaderPastOffsetClass
+   * toggleClassPastOffset
    */
-  function togglePageHeaderPastOffsetClass () {
+   // $TODO - pass in the node? and the class name? and the threshold?
+   // probably just pass in an entire config object
+  function toggleClassPastOffset () {
     const changeInScrollPos = previousScrollY - currentScrollY,
           triggerThreshold = 5,
           offset = pageHeader.offsetHeight
@@ -144,7 +147,7 @@ onload = function () {
    * getNearestLinkAncestor
    */
   function getNearestLinkAncestor(el) {
-    if (isLink(el)) {
+    if (el.nodeName && el.nodeName === 'A') {
       return el
     }
     else if (el.parentNode) {
@@ -153,83 +156,54 @@ onload = function () {
     else {
       return undefined
     }
-
-    function isLink (element) {
-      return element.nodeName && element.nodeName === 'A'
-    }
   }
 
   /*
-   * detectActiveTargetAndAdjustStyle
+   * makeCurrentLinkActive
    *
-   * Adds the active class to the appropriate nav link according to the scroll
-   * position of the window.
-   *
-   * params:Object -> void
-   *
-   * params properties
-   * ---------------------------------------------------------------------------
-   * bookmarks:Array<{id:String, element:HTMLElement}>
-   * offset:Number
+   * links:NodeList -> void
    */
-  function detectActiveTargetAndAdjustStyle ( params ) {
-    params = params || {}
-    const bookmarks = params.bookmarks || [],
-          offset = params.offset || 0
-    
-    var currentTarget = bookmarks[0] || {}
+   // $TODO - possibly a config object?
+  function makeCurrentLinkActive () {
+    const activeThreshold = currentScrollY + activeTargetOffset,
+          ids = offsetMap.ids || [], values = offsetMap.values || {}
 
-    for (var i = 0, l = bookmarks.length; i < l; i++) {
-      var target = bookmarks[i]
+    var i = 0, y = 0,
+        activeBookmark
 
-      if ( currentScrollY + offset >= target.element.offsetTop ) {
-        currentTarget = target
-      }
+    while (ids[i] && values[ids[i]] <= activeThreshold) {
+      activeBookmark = ids[i]
+      i++
     }
 
-    currentSection = currentTarget.id === currentSection.id ? currentSection : currentTarget
-
-    makeTargetLinkActive(currentSection.id)
-
-    function makeTargetLinkActive (targetId) {
-      var activeLink
-      navLinks.forEach(function clearAllActive (link) {
-        if (link.classList.contains('is-active')) {
-          link.classList.remove('is-active')
-        }
-        if (link.hash === targetId) {
-          activeLink = link
-        }
-      })
-
-      if (activeLink) {
-        activeLink.classList.add('is-active')
-      }
-    }
+    toggleActiveLink(activeBookmark)
   }
-  // kick off to do initial select
-  detectActiveTargetAndAdjustStyle(targetConfig)
 
-  /*
-   * createSectionOffsetMap
-   *
-   * Takes a list of elements and builds a map of each section and its offset for use
-   * in scrollToBookmark.
-   */
-  function updateSectionOffsetList (list) {
-    var offsetList = []
-
-    list.forEach(function registerSectionOffset (link) {
-      if (link.href.indexOf(location.href) === 0) {
-        var el = document.querySelector(link.hash)
-        offsetList.push({
-          id: link.hash,
-          element: el
-        })
+  function toggleActiveLink (targetId) {
+    var activeLink
+    navLinks.forEach(function clearAllActive (link) {
+      if (link.classList.contains('is-active')) {
+        link.classList.remove('is-active')
+      }
+      if (link.hash === targetId) {
+        activeLink = link
       }
     })
 
-    return offsetList
+    if (activeLink) {
+      activeLink.classList.add('is-active')
+    }
+  }
+
+  function createOffsetMap (ids) {
+    return {
+      ids: ids,
+      values: ids.reduce(function (map, id) {
+        var offset = getOffsetTop( document.querySelector(id) )
+        map[id] = offset
+        return map
+      }, {})
+    }
   }
 
   /*
@@ -242,13 +216,13 @@ onload = function () {
     var element = document.querySelector(bookmark),
         scrollTop = getOffsetTop(element) - offset
     // $TODO - support history? there is a problem with having a hash in the url
-    window.scroll(0, scrollTop)
+    document.documentElement.scrollTop = scrollTop
   }
 
   function findInArray (arr, check) {
-    if (!Array.isArray(arr)) {
-      throw new Error('Expected an array for first argument.')
-    }
+    // if (!Array.isArray(arr)) {
+    //   throw new Error('Expected an array for first argument.')
+    // }
     if (typeof check !== 'function') {
       throw new Error('Expected a function for second argument.')
     }
@@ -267,6 +241,9 @@ onload = function () {
     return undefined;
   }
 
+  /*
+   * getOffsetTop
+   */
   function getOffsetTop (node) {
     var offsetTop = node.offsetTop
     while (node.offsetParent) {
@@ -274,5 +251,17 @@ onload = function () {
       offsetTop += node.offsetTop
     }
     return offsetTop
+  }
+
+  /*
+   * getOffsetLeft
+   */
+  function getOffsetLeft (node) {
+    var offsetLeft = node.offsetLeft
+    while (node.offsetParent) {
+      node = node.offsetParent
+      offsetLeft += node.offsetLeft
+    }
+    return offsetLeft
   }
 }
