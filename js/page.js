@@ -2,12 +2,11 @@ onload = function () {
   var pageHeader = document.querySelector('.js-page-header'),
       pageHeaderLogo = pageHeader.querySelector('page-header__logo'),
       nav = document.querySelector('.js-nav'),
-      // $TODO - change to all internal links???
       navLinks = nav.querySelectorAll('a'),
       bookmarks = document.querySelectorAll('a[rel="bookmark"]'),
       navToggleBtn = document.querySelector('.js-nav-toggle'),
 
-      // page state...yikes!
+      // page state
       currentScrollY = 0,
       previousScrollY,
       ticking = false,
@@ -22,8 +21,6 @@ onload = function () {
     .innerText = (new Date()).getFullYear()
 
 
-  /* EVENTS *******************************************************************/
-
   pageHeader.addEventListener('click', function handlePageHeaderClick (e) {
 
     const linkEl = getNearestLinkAncestor(e.target)
@@ -35,8 +32,6 @@ onload = function () {
     else if (linkEl.isEqualNode(navToggleBtn)) {
       toggleNavOpenClass()
     }
-    // something screwy here when the URL has a hash... (ex. localhost:3000#experience)
-    // target is always expereience link for whatever reason
     else {
       const bookmark = findInArray(bookmarks, function(b) {
         return b.id === linkEl.hash.slice(1)
@@ -60,8 +55,6 @@ onload = function () {
   window.addEventListener('resize', function updateOffsetMap () {
     offsetMap = createOffsetMap(bookmarkIds)
   })
-
-  /* END EVENTS ***************************************************************/
 
 
 
@@ -111,16 +104,13 @@ onload = function () {
   function requestTick () {
     if (!ticking) {
       requestAnimationFrame(function handleScroll () {
-        // all scroll-related functions go here
         toggleClassPastOffset()
         makeCurrentLinkActive()
 
-        // after executing the code, we reset ticking state
         ticking = false
       })
     }
 
-    // while waiting for an animation frame, set ticking state to true
     ticking = true
   }
 
@@ -134,7 +124,7 @@ onload = function () {
           triggerThreshold = 5,
           offset = pageHeader.offsetHeight
 
-    // well, this _could_ use toggle, but IE doesn't support the 2nd argument
+    // well, this _could_ use classList.toggle, but IE doesn't support the 2nd argument
     if (currentScrollY > offset) {
       pageHeader.classList.add('is-past-offset')
     }
@@ -145,6 +135,8 @@ onload = function () {
 
   /*
    * getNearestLinkAncestor
+   *
+   * el:Element -> el:HTMLAnchorElement|undefined
    */
   function getNearestLinkAncestor(el) {
     if (el.nodeName && el.nodeName === 'A') {
@@ -167,6 +159,8 @@ onload = function () {
   function makeCurrentLinkActive () {
     const activeThreshold = currentScrollY + activeTargetOffset,
           ids = offsetMap.ids || [], values = offsetMap.values || {}
+
+          console.log(activeThreshold, values)
 
     var i = 0, y = 0,
         activeBookmark
@@ -195,8 +189,13 @@ onload = function () {
     }
   }
 
+  /*
+   * createOffsetMap
+   *
+   * ids:Array<String> -> offsetMap{ ids:Array<String>, values{ [id]:Number } }
+   */
   function createOffsetMap (ids) {
-    return {
+    const offsetMap = {
       ids: ids,
       values: ids.reduce(function (map, id) {
         var offset = getOffsetTop( document.querySelector(id) )
@@ -204,32 +203,26 @@ onload = function () {
         return map
       }, {})
     }
+    console.log(offsetMap)
+
+    return offsetMap
   }
 
   /*
-   * scrollToBookmark
+   * findInArray
    *
-   * bookmark:String
+   * arr:Array<T>, check:Function -> result<T>
    */
-  function scrollToBookmark (bookmark, offset) {
-    offset = offset || 0
-    var element = document.querySelector(bookmark),
-        scrollTop = getOffsetTop(element) - offset
-    // $TODO - support history? there is a problem with having a hash in the url
-    document.documentElement.scrollTop = scrollTop
-  }
-
   function findInArray (arr, check) {
-    // if (!Array.isArray(arr)) {
-    //   throw new Error('Expected an array for first argument.')
-    // }
+    if (arr.length === undefined) {
+      throw new Error('Expected an iterable for first argument.')
+    }
     if (typeof check !== 'function') {
       throw new Error('Expected a function for second argument.')
     }
 
     const length = arr.length
     var i = 0
-    // while there's still length in the array and the check is false
     
     while (i < length) {
       if ( check(arr[i]) ) {
@@ -243,6 +236,8 @@ onload = function () {
 
   /*
    * getOffsetTop
+   *
+   * node:Node -> offsetTop:Number
    */
   function getOffsetTop (node) {
     var offsetTop = node.offsetTop
@@ -251,17 +246,5 @@ onload = function () {
       offsetTop += node.offsetTop
     }
     return offsetTop
-  }
-
-  /*
-   * getOffsetLeft
-   */
-  function getOffsetLeft (node) {
-    var offsetLeft = node.offsetLeft
-    while (node.offsetParent) {
-      node = node.offsetParent
-      offsetLeft += node.offsetLeft
-    }
-    return offsetLeft
   }
 }
