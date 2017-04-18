@@ -1,6 +1,9 @@
 // Variables
 @import "scss/variables";
 
+// Layout classes
+@import "scss/layout";
+
 // Base style rules
 @import "scss/fonts";
 @import "scss/icons";
@@ -8,6 +11,7 @@
 @import "scss/typography";
 @import "scss/links";
 @import "scss/forms";
+@import "scss/buttons";
 
 // Components
 @import "scss/page-header";

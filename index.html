@@ -238,35 +238,39 @@
       <h2 class="section__title">Contact</h2>
       <p>Is there something I haven’t answered? Please drop me a line in the form below and ask me anything. I promise to get back with you as soon as possible.</p>
       
-      <!-- Refer to https://formspree.io for API documentation -->
-      <form action="https://formspree.io/falldowngoboone@gmail.com" method="POST">
-        <input type="hidden" name="_next" value="#" />
-        <input type="hidden" name="_subject" value="New submission!" />
-        <div class="input-group">
-          <label class="section__secondary-heading" for="name">Your Name</label>
-          <input id="name" name="name" type="text" required>
-        </div>
-        <div class="input-group">
-          <label class="section__secondary-heading" for="email">Your Email</label>
-          <input id="email" name="email" type="email" required>
-        </div>
-        <input type="text" name="_gotcha" style="display:none" placeholder="Please leave me blank" />
-        <div class="input-group">
-          <label class="section__secondary-heading" for="message">Your Message</label>
-          <textarea name="message" id="message" cols="30" rows="10"></textarea>
-        </div>
-        <div class="input-group">
-          <button type="submit">Send your message</button>
-        </div>
-      </form>
+      <div class="l-2-lg">
+        <!-- Refer to https://formspree.io for API documentation -->
+        <form class="form" action="https://formspree.io/falldowngoboone@gmail.com" method="POST">
+          <input type="hidden" name="_next" value="#" />
+          <input type="hidden" name="_subject" value="New submission!" />
+          <div class="input-group">
+            <label class="section__secondary-heading" for="name">Your Name</label>
+            <input id="name" name="name" type="text" required>
+          </div>
+          <div class="input-group">
+            <label class="section__secondary-heading" for="email">Your Email</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+          <input type="text" name="_gotcha" style="display:none" placeholder="Please leave me blank" />
+          <div class="input-group">
+            <label class="section__secondary-heading" for="message">Your Message</label>
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+          </div>
+          <div class="input-group">
+            <button class="btn" type="submit">Send your message</button>
+          </div>
+        </form>
 
-      <h3 class="section__primary-heading">Other Places You Can Find Me</h3>
-      <ul>
-        <li><a href="https://github.com/falldowngoboone" target="_blank" rel="noopener noreferrer">My Github profile</a></li>
-        <li><a href="http://codepen.io/falldowngoboone/" target="_blank" rel="noopener noreferrer">My Codepen profile</a></li>
-        <li><a href="https://www.behance.net/ryanboone" target="_blank" rel="noopener noreferrer">Some of my design work on Behance</a></li>
-        <li><a href="http://www.falldowngoboone.com" target="_blank" rel="noopener noreferrer">falldowngoboone, my personal blog.</a></li>
-      </ul>
+        <div>
+          <h3 class="section__primary-heading">Other Places You Can Find Me</h3>
+          <ul>
+            <li><a href="https://github.com/falldowngoboone" target="_blank" rel="noopener noreferrer">My Github profile</a></li>
+            <li><a href="http://codepen.io/falldowngoboone/" target="_blank" rel="noopener noreferrer">My Codepen profile</a></li>
+            <li><a href="https://www.behance.net/ryanboone" target="_blank" rel="noopener noreferrer">Some of my design work on Behance</a></li>
+            <li><a href="http://www.falldowngoboone.com" target="_blank" rel="noopener noreferrer">falldowngoboone, my personal blog.</a></li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <footer class="page-footer">© <span id="copyright-date">2017</span> Ryan Boone</footer>
