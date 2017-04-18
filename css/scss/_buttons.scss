@@ -1,11 +1,14 @@
 .btn {
   font-size: inherit;
+  font-family: $secondary-font-stack;
+  font-weight: 500;
   line-height: inherit;
   color: white;
   background-color: $primary-background-color;
   -webkit-appearance: none;
   border: none;
   padding: ($lh-space / 2) ($sm-space / 2);
+  margin-top: $lh-space;
 
   @media screen and (min-width: $mq-md) {
     width: auto;

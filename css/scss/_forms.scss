@@ -6,8 +6,10 @@
   margin-bottom: $lh-space * 2;
  }
 
-.input-group {
-  margin-top: $lh-space;
+.input-group:first-of-type {
+  .section__secondary-heading {
+    margin-top: 0;
+  }
 }
 
 .input-group > * {
