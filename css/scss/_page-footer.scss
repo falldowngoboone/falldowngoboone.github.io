@@ -2,6 +2,8 @@
  * $Footer
  */
 .page-footer {
-  margin: 0 $sm-space;
-  padding: $lh-space 0;
+  margin: 0;
+  padding: $lh-space $sm-space;
+  background-color: $primary-background-color;
+  color: #ffffff;
 }

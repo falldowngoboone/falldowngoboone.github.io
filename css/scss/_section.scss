@@ -3,17 +3,28 @@
  */
 
 .section {
-  margin: 0 auto;
-  width: 90vw;
-  border-bottom: 1px solid $primary-color--light;
+  margin: 0;
+  // border-bottom: 1px solid $primary-color--light;
   padding-top: ($sm-space * 2);
   padding-bottom: ($lh-space * 2);
 
   @media screen and (min-width: $mq-md) {
     margin-left: auto;
     margin-right: auto;
-    width: 80vw;
-    max-width: 768 / 18.88 * 1em;
+  }
+}
+
+.section:nth-of-type(2n + 1) {
+  background-color: #f8f8f8;
+}
+
+.section > * {
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: $mq-md) {
+    max-width: 768 / 18.88 * 1rem; // 768 is 80vw of 960, and 18.88px is 1rem at 960
   }
 }
 
@@ -24,14 +35,9 @@
   background-size: cover;
   background-position: top center;
   color: #ffffff;
-  width: 100%;
-  max-width: 100%;
-  border-bottom: none;
+  // border-bottom: none;
 
-  margin-left: 0;
-  margin-right: 0;
   padding-top: ($lh-space * 8);
-  padding-bottom: ($lh-space * 2);
 
   @media (-webkit-min-device-pixel-ratio: 2), /* Webkit-based browsers */
          (min-resolution: 2dppx), /* The standard way */
@@ -54,9 +60,6 @@
 
   @media screen and (min-width: $mq-lg) {
     background-image: url(../images/rb-headshot-lg.jpg);
-
-    padding-top: 25vw;
-    padding-bottom: 10vw;
   }
 
   @media screen and (min-width: $mq-lg) and (-webkit-min-device-pixel-ratio: 2),
@@ -75,13 +78,15 @@
 }
 
 .section--about > * {
-  width: 90vw;
   max-width: 26rem;
-  padding: 0 5vw;
+  margin-left: 5vw;
+  padding-right: 10vw;
+
 
   @media screen and (min-width: $mq-md) {
-    padding-left: 300 / 18.88 * 1rem;
-    max-width: 768 / 18.88 * 1rem; // 768 is 80vw of 960, and 18.88px is 1rem at 960
+    padding-right: 5vw;
+    padding-left: 300 / 18.88 * 1rem; // 300px is width and 18.88px is 1rem at 960
+    max-width: 768 / 18.88 * 1rem; // reset max-width
     margin-left: auto;
     margin-right: auto;
   }
@@ -89,6 +94,18 @@
   @media screen and (min-width: $mq-lg) {
     padding-right: 0;
   }
+}
+
+.section--contact__group {
+  margin-top: $lh-space * 2;
+}
+
+.section--contact input,
+.section--contact textarea {
+  border: none;
+  border-bottom: 7px solid $text-color;
+  padding: 0.25rem;
+  outline: none;
 }
 
 .section__list > li {
@@ -141,8 +158,6 @@ section:not(.section--experience) .section__secondary-heading {
 
   @media screen and (min-width: $mq-md) {
     width: 100%;
-    // margin-left: ($sm-space * -2);
-    // margin-right: ($sm-space * -2);
   }
 }
 
