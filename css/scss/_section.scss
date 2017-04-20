@@ -24,6 +24,7 @@
   margin-right: auto;
 
   @media screen and (min-width: $mq-md) {
+    width: 80vw;
     max-width: 768 / 18.88 * 1rem; // 768 is 80vw of 960, and 18.88px is 1rem at 960
   }
 }
@@ -80,19 +81,16 @@
 .section--about > * {
   max-width: 26rem;
   margin-left: 5vw;
-  padding-right: 10vw;
-
 
   @media screen and (min-width: $mq-md) {
-    padding-right: 5vw;
-    padding-left: 300 / 18.88 * 1rem; // 300px is width and 18.88px is 1rem at 960
+    padding-left: 30%;
     max-width: 768 / 18.88 * 1rem; // reset max-width
     margin-left: auto;
     margin-right: auto;
   }
 
   @media screen and (min-width: $mq-lg) {
-    padding-right: 0;
+    padding-left: 300 / 18.88 * 1rem; // 300px is width and 18.88px is 1rem at 960
   }
 }
 

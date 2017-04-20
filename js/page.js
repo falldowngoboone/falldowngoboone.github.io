@@ -160,8 +160,6 @@ onload = function () {
     const activeThreshold = currentScrollY + activeTargetOffset,
           ids = offsetMap.ids || [], values = offsetMap.values || {}
 
-          console.log(activeThreshold, values)
-
     var i = 0, y = 0,
         activeBookmark
 
@@ -203,7 +201,6 @@ onload = function () {
         return map
       }, {})
     }
-    console.log(offsetMap)
 
     return offsetMap
   }
