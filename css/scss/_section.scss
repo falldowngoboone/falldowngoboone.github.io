@@ -110,6 +110,14 @@
   padding-top: $lh-space;
 }
 
+p + .section__list {
+  margin-top: 0;
+
+  & li:first-of-type {
+    padding-top: 0;
+  }
+}
+
 .section__title {
   font-size: 2rem;
   /* 
