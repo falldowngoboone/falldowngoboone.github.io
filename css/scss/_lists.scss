@@ -1,0 +1,11 @@
+.list--arrow {
+  padding-left: 0;
+}
+.list--arrow li {
+  list-style-type: none;
+  padding-left: 1.25rem;
+  background-image: url('../images/arrow-bullet.svg');
+  background-repeat: no-repeat;
+  background-size: 0.75em;
+  background-position: 0.25em 0.5em;
+}
