@@ -40,9 +40,14 @@
 
   padding-top: ($lh-space * 8);
 
-  @media (-webkit-min-device-pixel-ratio: 2), /* Webkit-based browsers */
-         (min-resolution: 2dppx), /* The standard way */
-         (min-resolution: 192dpi) /* dppx fallback */ {
+  a,
+  :root:not(.ios) & a:hover {
+    color: inherit;
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+    /* Webkit-based browsers */ (min-resolution: 2dppx),
+    /* The standard way */ (min-resolution: 192dpi) /* dppx fallback */ {
     background-image: url(../images/rb-headshot-sm@2x.jpg);
   }
 
@@ -54,8 +59,8 @@
   }
 
   @media screen and (min-width: $mq-md) and (-webkit-min-device-pixel-ratio: 2),
-         screen and (min-width: $mq-md) and (min-resolution: 2dppx),
-         screen and (min-width: $mq-md) and (min-resolution: 192dpi) {
+    screen and (min-width: $mq-md) and (min-resolution: 2dppx),
+    screen and (min-width: $mq-md) and (min-resolution: 192dpi) {
     background-image: url(../images/rb-headshot-md@2x.jpg);
   }
 
@@ -64,8 +69,8 @@
   }
 
   @media screen and (min-width: $mq-lg) and (-webkit-min-device-pixel-ratio: 2),
-         screen and (min-width: $mq-lg) and (min-resolution: 2dppx),
-         screen and (min-width: $mq-lg) and (min-resolution: 192dpi) {
+    screen and (min-width: $mq-lg) and (min-resolution: 2dppx),
+    screen and (min-width: $mq-lg) and (min-resolution: 192dpi) {
     background-image: url(../images/rb-headshot-lg@2x.jpg);
   }
 }
@@ -133,7 +138,7 @@ p + .section__list {
 
   // vertical offset
   position: relative;
-  top: ( 1.25em / 1.375 ) * $line-height;
+  top: (1.25em / 1.375) * $line-height;
 
   font-family: $primary-font-stack;
   font-weight: normal;

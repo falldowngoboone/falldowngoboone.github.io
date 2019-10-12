@@ -1,307 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Ryan Boone | Developer/Designer</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ryan Boone | Developer/Designer</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/head.js"></script>
-</head>
-<body>
-  <!-- top anchor -->
-  <a id="top" rel="bookmark"></a>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- SVG symbols -->
-  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
-    <symbol id="rb-logo-bug" viewbox="0 0 200 200">
-      <title>Ryan Boone, Developer</title>
-      <circle class="bg-circle" fill="#ffffff" cx="100" cy="100" r="100"/>
-      <path id="rb-bug" fill="#17171d" d="M89.89,82.77c0-12.09-10.2-17.5-20.31-17.5H47.41a1,1,0,0,0-1,1V99.31a1,1,0,0,0,1,1H69.58C79.69,100.27,89.89,94.86,89.89,82.77Zm34.56,11.54a1,1,0,0,0,1,1H145.2c16.58,0,17.87-11.48,17.87-15,0-7.42-2.12-15-17.87-15H125.41a1,1,0,0,0-1,1ZM100,0A100,100,0,1,0,200,100,100,100,0,0,0,100,0Zm44.68,146.83c-9.63,0-16.37-1.89-20.94-4.08a1,1,0,0,0-1.3.5c-3.48,7.67-11.44,12-22.72,12-16.36,0-22.34-14.75-27.15-26.61-4.63-11.4-7.82-18.39-15-18.39H47.41a1,1,0,0,0-1,1v20.08a1,1,0,0,0,1,1h8.08a1,1,0,0,1,1,1v8.08a1,1,0,0,1-1,1H27.41a1,1,0,0,1-1-1v-8.08a1,1,0,0,1,1-1h8.08a1,1,0,0,0,1-1V66.23a1,1,0,0,0-1-1H27.41a1,1,0,0,1-1-1V56.23a1,1,0,0,1,1-1h42c8.19,0,15.7,2.54,21.16,7.16a26.12,26.12,0,0,1,9.15,20.34,26.12,26.12,0,0,1-9.15,20.34,30.79,30.79,0,0,1-14.69,6.6,1,1,0,0,0-.66,1.47,88.86,88.86,0,0,1,6.5,13.71c5.15,12.68,8.93,20.38,17.95,20.38,4,0,14.74,0,14.74-11.88V66.23a1,1,0,0,0-1-1h-8.08a1,1,0,0,1-1-1V56.23a1,1,0,0,1,1-1h39.27c8.54,0,15,1.86,19.65,5.7,5.17,4.24,7.79,10.63,7.79,19,0,7.52-2.68,13.21-6.85,17.22a1,1,0,0,0,.22,1.54c10.26,5.22,12.24,14.36,12.24,20.62C177.73,136.54,160.93,146.83,144.68,146.83Zm.2-41.56H125.41a1,1,0,0,0-1,1v26c2.07,1.76,7.92,5.46,20.43,5.46,11.43,0,23.26-6.58,23.26-17.6C168.14,116.39,168.14,105.27,144.88,105.27Z"/>
-    </symbol>
-  </svg>
-  <!-- /SVG symbols -->
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/head.js"></script>
+  </head>
+  <body>
+    <!-- top anchor -->
+    <a id="top" rel="bookmark"></a>
 
-  <header class="page-header js-page-header">
-  
-    <h1 class="u-sr-only">Ryan Boone</h1>
+    <!-- SVG symbols -->
+    <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="rb-logo-bug" viewbox="0 0 200 200">
+        <title>Ryan Boone, Developer</title>
+        <circle class="bg-circle" fill="#ffffff" cx="100" cy="100" r="100" />
+        <path
+          id="rb-bug"
+          fill="#17171d"
+          d="M89.89,82.77c0-12.09-10.2-17.5-20.31-17.5H47.41a1,1,0,0,0-1,1V99.31a1,1,0,0,0,1,1H69.58C79.69,100.27,89.89,94.86,89.89,82.77Zm34.56,11.54a1,1,0,0,0,1,1H145.2c16.58,0,17.87-11.48,17.87-15,0-7.42-2.12-15-17.87-15H125.41a1,1,0,0,0-1,1ZM100,0A100,100,0,1,0,200,100,100,100,0,0,0,100,0Zm44.68,146.83c-9.63,0-16.37-1.89-20.94-4.08a1,1,0,0,0-1.3.5c-3.48,7.67-11.44,12-22.72,12-16.36,0-22.34-14.75-27.15-26.61-4.63-11.4-7.82-18.39-15-18.39H47.41a1,1,0,0,0-1,1v20.08a1,1,0,0,0,1,1h8.08a1,1,0,0,1,1,1v8.08a1,1,0,0,1-1,1H27.41a1,1,0,0,1-1-1v-8.08a1,1,0,0,1,1-1h8.08a1,1,0,0,0,1-1V66.23a1,1,0,0,0-1-1H27.41a1,1,0,0,1-1-1V56.23a1,1,0,0,1,1-1h42c8.19,0,15.7,2.54,21.16,7.16a26.12,26.12,0,0,1,9.15,20.34,26.12,26.12,0,0,1-9.15,20.34,30.79,30.79,0,0,1-14.69,6.6,1,1,0,0,0-.66,1.47,88.86,88.86,0,0,1,6.5,13.71c5.15,12.68,8.93,20.38,17.95,20.38,4,0,14.74,0,14.74-11.88V66.23a1,1,0,0,0-1-1h-8.08a1,1,0,0,1-1-1V56.23a1,1,0,0,1,1-1h39.27c8.54,0,15,1.86,19.65,5.7,5.17,4.24,7.79,10.63,7.79,19,0,7.52-2.68,13.21-6.85,17.22a1,1,0,0,0,.22,1.54c10.26,5.22,12.24,14.36,12.24,20.62C177.73,136.54,160.93,146.83,144.68,146.83Zm.2-41.56H125.41a1,1,0,0,0-1,1v26c2.07,1.76,7.92,5.46,20.43,5.46,11.43,0,23.26-6.58,23.26-17.6C168.14,116.39,168.14,105.27,144.88,105.27Z"
+        />
+      </symbol>
+    </svg>
+    <!-- /SVG symbols -->
 
-    <a class="page-header__logo" href="#top">
-      <svg class="icon">
-        <use xlink:href="#rb-logo-bug" x="0" y="0" />
-      </svg>
-    </a>
+    <header class="page-header js-page-header">
+      <h1 class="u-sr-only">Ryan Boone</h1>
 
-    <!-- nav toggle -->
-    <a class="page-header__nav-toggle js-nav-toggle" href="#" role="button" aria-label="menu"><span></span></a>
-    
-    <!-- nav menu -->
-    <nav class="nav js-nav">
-      <ul class="nav__links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+      <a class="page-header__logo" href="#top">
+        <svg class="icon">
+          <use xlink:href="#rb-logo-bug" x="0" y="0" />
+        </svg>
+      </a>
 
-  </header>
+      <!-- nav toggle -->
+      <a
+        class="page-header__nav-toggle js-nav-toggle"
+        href="#"
+        role="button"
+        aria-label="menu"
+        ><span></span
+      ></a>
 
-  <main>
-    
-    <a id="about" rel="bookmark"></a>
-    <section class="section section--about">
-      <h2 class="section__title"><span>Hello.</span> <span>I'm&nbsp;Ryan.</span></h2>
-      <p>I am a Fort Worth-based designer and front-end developer seeking opportunities to learn, grow, and do meaningful work. Current obsessions include all things JavaScript, stupid trivia, and <cite>Stranger Things</cite>.</p>
-    </section>
+      <!-- nav menu -->
+      <nav class="nav js-nav">
+        <ul class="nav__links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#history">History</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <a id="experience" rel="bookmark"></a>
-    <section class="section section--experience">
-      <h2 class="section__title">Experience</h2>
+    <main>
+      <a id="about" rel="bookmark"></a>
+      <section class="section section--about">
+        <h2 class="section__title">
+          <span>Hello.</span> <span>I'm&nbsp;Ryan.</span>
+        </h2>
+        <p>
+          I’m a front-end developer and designer based in Fort Worth, TX. I
+          currently help make the space that comes from
+          <a
+            href="https://www.containerstore.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            >The Container Store</a
+          >. I also write things that occasionally make sense on
+          <a
+            href="https://twitter.com/therealboone"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Twitter</a
+          >
+          and my personal blog,
+          <a class="u-nobreak" href="https://www.falldowngoboone.com"
+            >falldowngoboone</a
+          >.
+        </p>
+      </section>
 
-      <p>One common question I get asked is: <em>After a decade and a half in a predominantly print-related career field, why make the jump to front-end development?</em> For me, it’s been less of a leap and more a continuous journey of pursuing my curiosity and passion for creative problem solving. It started in college, where I was in a band with big dreams and a tiny budget. We wanted to promote our new album and concerts with a website, so I got a book on Flash and hacked away.</p>
+      <a id="history" rel="bookmark"></a>
+      <section class="section section--experience">
+        <h2 class="section__title">History</h2>
 
-      <p>Whether it was learning to listen to customers’ needs as a salesman, or learning to deal with a fast-paced environment and rapidly iterate as a designer at a newspaper, I’ve learned something valuable from every stop along my journey. I love solving problems and I love continually learning, two things that have led me to pursue front-end development. What follows is a brief summary of that journey.</p>
+        <p>
+          Like most every other developers I've met, I started doing web
+          development because I was in a band, but for about 15 years, I was
+          professionally a graphic designer. A few years ago, I became seriously
+          curious (or curiously serious?) about pursuing a full-time career as a
+          developer. I had been doing freelance web design and development work
+          on and off since college, but I decided to make it official. In July
+          of 2017, I joined The Container Store's Technology department as an
+          applications developer.
+        </p>
 
-      <ul class="section__list u-unstyled-list">
-        <li>
-          <h3 class="section__secondary-heading">October 2015&ndash;Present</h3>
+        <p>
+          As a member of the TCS Technology team, I've facilitated our in-house
+          JavaScript Special Interest Group and am an active member in our
+          Technical Architecture Guild, a group that works to form architectural
+          decisions department wide. I (really) love talking and have done so in
+          the presence of other people, oddly enough, mostly about React and
+          JavaScript. I'm currently interested in building beautiful,
+          performant, and accessible UI in a maintainable way.
+          <a href="#contact">Drop me a line</a> if you want to know more, and
+          <a
+            href="https://twitter.com/therealboone"
+            target="_blank"
+            rel="noopener noreferrer"
+            >follow me on Twitter</a
+          >
+          for nonsense if you feel so inclined.
+        </p>
+      </section>
 
-          <h4 class="section__primary-heading">Freelance Front-End Developer and Web Designer &mdash; <em>Fort Worth, TX</em></h4>
-          <p>My most recent freelance project was a website redesign for <a href="http://www.olive-thebeautylounge.com" target="_blank" rel="noopener noreferrer">Olive&thinsp;&mdash;&thinsp;The Beauty Lounge</a>, an upscale salon based in Mansfield, TX.</p>
-          <ul class="list--arrow">
-            <li>Build and maintain custom WordPress themes</li>
-            <li>Interview the client, discuss business needs, establish goals, and carry out solutions</li>
-            <li>WooCommerce, Google Maps, and social media integration</li>
-          </ul>
-        </li>
+      <a id="contact" rel="bookmark"></a>
+      <section class="section section--contact">
+        <h2 class="section__title">Contact</h2>
+        <p>
+          Is there something I haven’t answered? Please drop me a line in the
+          form below and ask me anything. I promise to get back with you as soon
+          as possible.
+        </p>
 
-        <li>
-          <h3 class="section__secondary-heading">November 2006&ndash;Present</h3>
+        <div class="l-2-lg section--contact__group">
+          <!-- Refer to https://formspree.io for API documentation -->
+          <form
+            class="form"
+            action="https://formspree.io/falldowngoboone@gmail.com"
+            method="POST"
+          >
+            <input type="hidden" name="_next" value="#" />
+            <input type="hidden" name="_subject" value="New submission!" />
+            <div class="input-group">
+              <label class="section__secondary-heading" for="name"
+                >Your Name</label
+              >
+              <input id="name" name="name" type="text" required />
+            </div>
+            <div class="input-group">
+              <label class="section__secondary-heading" for="email"
+                >Your Email</label
+              >
+              <input id="email" name="email" type="email" required />
+            </div>
+            <input
+              type="text"
+              name="_gotcha"
+              style="display:none"
+              placeholder="Please leave me blank"
+            />
+            <div class="input-group">
+              <label class="section__secondary-heading" for="message"
+                >Your Message</label
+              >
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
+              ></textarea>
+            </div>
+            <div class="input-group">
+              <button class="btn" type="submit">Send your message</button>
+            </div>
+          </form>
 
-          <h4 class="section__primary-heading">Senior designer&thinsp;&mdash;&thinsp;Inprov, LLC, <em>Southlake, TX</em></h4>
-          <p>Inprov is a donor development agency based in North Texas that works with non-profit and charitable organizations.</p>
-          <ul class="list--arrow">
-            <li>I work with organizations to produce promotional materials with tight budgets and deadlines to create opportunities for high return on investment.</li>
-            <li>One of the challenges I face every day is creating new and interesting ways to present the same message in a recurring format.</li>
-            <li>When our company rebranded I jumped at the opportunity to build the new <a href="http://inprov.net" target="_blank" rel="noopener noreferrer">company website</a>.</li>
-            <li>I have also developed one-off promotional web pages for clients involving custom web forms and PHP/JavaScript development.</li>
-          </ul>
-        </li>
-
-        <li>
-          <h3 class="section__secondary-heading">February 2004&ndash;November 2006</h3>
-
-          <h4 class="section__primary-heading">Graphic Designer&thinsp;&mdash;&thinsp;Port Arthur News, <em>Port Arthur, TX</em></h4>
-          <p>The Port Arthur News was where I had my first job in graphic design. It was a fast-paced environment with ads conceived, written, and delivered often over the course of a single day.</p>
-          <ul class="list--arrow">
-            <li>I designed and built newspaper ads for everything from realtors to car lots.</li>
-            <li>I prepared submitted work for press (tabloids that our press printed) and learned the intricacies of the printing process.</li>
-            <li>In my last year, I developed and maintained assets for our website.</li>
-          </ul>
-        </li>
-
-        <li>
-          <h3 class="section__secondary-heading">March 2003&ndash;February 2004</h3>
-
-          <h4 class="section__primary-heading">Sales Associate&thinsp;&mdash;&thinsp;A&amp;S Music, <em>Nederland, TX</em></h4>
-          <p>A&amp;S was a mom-and-pop music shop in Southeast Texas with decades of history in the area. This was really just an excuse to be surrounded by music equipment and meet some amazing musicians.</p>
-          <ul class="list--arrow">
-            <li>I learned to listen to customers’ needs and connect them to the best solution available within their price range.</li>
-            <li>I learned the process of selling to customers and regularly met or exceeded sales goals.</li>
-            <li>Did I mention I was surrounded by music equipment all day long?</li>
-          </ul>
-        </li>
-
-        <p>If you really must know what I did before June 2003, <a href="#contact">drop me a line in the form below</a>. Trust me, it’s not that interesting (spoiler alert: it involves working at a mall).</p>
-      </ul>
-    </section>
-
-    <a id="projects" rel="bookmark"></a>
-    <section class="section section--projects">
-      <h2 class="section__title">Projects</h2>
-      <ul class="section__list u-unstyled-list">
-        <li>
-          <img class="section__img" src="images/side-projects-lists-app.png" alt="Lists App, a React/Redux project">
-          <h3 class="section__primary-heading"><a href="https://github.com/falldowngoboone/lists-app" target="_blank" rel="noopener noreferrer">Lists App</a></h3>
-          <p>My artist colleagues and I send a status report to our art director every day. I realized tracking a dozen emails, each packed with dozens of active projects in completely different formats, was a panic-inducing productivity black hole. This React/Redux app is meant to save management from a daily mountain of project status updates by centralizing all updates into one uniformly-formatted web page.</p>
-
-          <h4 class="section__secondary-heading">Project Goals</h4>
-          <ul class="list--arrow">
-            <li>Gain basic UX experience by interviewing potential users and testing possible solutions</li>
-            <li>Establish a firm foundation in React</li>
-            <li>Better understand the Redux Flow philosophy</li>
-          </ul>
-          <h4 class="section__secondary-heading">Current Status</h4>
-          <ul class="list--arrow">
-            <li>Still in development/early real-world use</li>
-            <li>Initial app API is complete</li>
-            <li>Currently designing and developing UI</li>
-          </ul>
-
-          <h4 class="section__secondary-heading">What I've Learned So Far</h4>
-          <p>Throughout this project I've become better acquainted with test-driven development using Mocha and the Expect library, particularly knowing what to test for and how to maintain tests over the build process. Outside of programming and workflow experience, I learned how hard it is to design a solid, scalable API. I enjoyed the challenge, and I’d love to grow more in API design, as well as software architecture design.</p>
-        </li>
-
-        <li>
-          <img class="section__img" src="images/side-projects-job-tracker.png" alt="Job Tracker, an Angular 1.x project">
-          <h3 class="section__primary-heading"><a href="https://github.com/falldowngoboone/job-tracker" target="_blank" rel="noopener noreferrer">Job Tracker</a></h3>
-          <p>Everybody loves tracking project statuses, right? Because the company I work for juggles so many different projects at one time, it’s important that each department gets what they need when they need it. Since the art department is at the center of the process, we help by tracking all the jobs and everything we need to complete them, such as copy, images, and direction. At first, I would send a formatted email listing out the status of every project I was working on, but as my workload grew, I knew I needed an easier way to track dates. So I built this Angular 1.x and PHP hybrid as an early attempt to solve this problem.</p>
-
-          <h4 class="section__secondary-heading">Project Goals</h4>
-          <ul class="list--arrow">
-            <li>Create a&nbsp;project that depends on a&nbsp;common JavaScript framework</li>
-            <li>Create a&nbsp;useful, web-based replacement to handwritten to-do lists</li>
-            <li>Eliminate repetitive, hand-typed daily emails to management</li>
-          </ul>
-
-          <h4 class="section__secondary-heading">Current Status</h4>
-          <p>In real-world, daily use.</p>
-
-          <h4 class="section__secondary-heading">What I&nbsp;Learned</h4>
-          <p>This was the first big JavaScript project I&nbsp;had ever undertaken that was not a&nbsp;guided tutorial. Perhaps Angular 1.x was not a&nbsp;good starting place, but I&nbsp;learned how little I&nbsp;understood about JavaScript, as well as how difficult building just a&nbsp;simple framework-based web app really was. I&nbsp;learned about the tradeoffs made between custom code and off-the-shelf solutions. This project served as the basis for future JavaScript study.</p>
-        </li>
-
-        <li>
-          <h3 class="section__primary-heading"><cite>Eloquent JavaScript</cite> Exercises</h3>
-          <p>Early on in learning JavaScript, I stumbled upon <cite><a href="http://eloquentjavascript.net" target="_blank" rel="noopener noreferrer">Eloquent JavaScript</a></cite> by Marijn Haverbeke. I learned a lot from diving into the book and completing the challenges at the end of each chapter. Here are a few I loved doing.</p>
-
-          <h4 class="section__secondary-heading">Projects</h4>
-
-          <ul class="list--arrow">
-            <li><a href="http://codepen.io/falldowngoboone/pen/ZYKPOm" target="_blank" rel="noopener noreferrer">A platformer using the Canvas API</a></li>
-            <li><a href="http://codepen.io/falldowngoboone/pen/OPOKxp" target="_blank" rel="noopener noreferrer">Conway's Game of Life with checkboxes</a></li>
-            <li><a href="http://codepen.io/falldowngoboone/pen/zxRXjL" target="_blank" rel="noopener noreferrer">A simple painting app</a></li>
-          </ul>
-        </li>
-      </ul>
-    </section>
-
-    <a id="education" rel="bookmark"></a>
-    <section class="section">
-      <h2 class="section__title">Education</h2>
-      
-      <ul class="section__list u-unstyled-list">
-        <li>
-          <h3 class="section__primary-heading"><a href="https://cs50.harvard.edu" target="_blank" rel="noopener noreferrer">CS50 (HarvardX)</a></h3>
-
-          <h4 class="section__secondary-heading">Active</h4>
-          <p>Winter&ndash;Summer 2015</p>
-
-          <h4 class="section__secondary-heading">Subjects Studied</h4>
-          <ul class="list--arrow">
-            <li>Programming fundamentals</li>
-            <li>C</li>
-            <li>Complexity Theory (Asymptotic Notation)</li>
-            <li>Arrays</li>
-            <li>Algorithms</li>
-            <li>Memory (Stack and Heap)</li>
-            <li>Data Structures</li>
-            <li>HTTP</li>
-            <li>JavaScript</li>
-          </ul>
-
-          <h4 class="section__secondary-heading">Achievements</h4>
-          <ul class="list--arrow">
-            <li>100% grade on all projects submitted</li>
-            <li><a href="https://courses.edx.org/certificates/48975aedb6a845df952185ed613a5ac2" target="_blank" rel="noopener noreferrer">Certified passing completion</a></li>
-          </ul>
-
-          <h4 class="section__secondary-heading">Project Work</h4>
-          <ul class="list--arrow">
-            <li><a href="https://github.com/falldowngoboone/cs50/tree/master/pset2" target="_blank" rel="noopener noreferrer">String encryption with Caesar and Vigenere ciphers</a></li>
-            <li><a href="https://github.com/falldowngoboone/cs50/tree/master/pset4/bmp" target="_blank" rel="noopener noreferrer">JPEG recovery and manipulation software</a></li>
-            <li><a href="https://github.com/falldowngoboone/cs50/tree/master/pset5" target="_blank" rel="noopener noreferrer">Spell check using a&nbsp;10,000 word dictionary loaded into memory using a&nbsp;hash</a></li>
-            <li><a href="https://github.com/falldowngoboone/cs50/tree/master/pset7" target="_blank" rel="noopener noreferrer">PHP login form and shopping cart</a></li>
-            <li><a href="https://github.com/falldowngoboone/cs50/tree/master/pset8" target="_blank" rel="noopener noreferrer">Google News and Google Maps mashup</a></li>
-          </ul>
-        </li>
-
-        <li>
-          <h3 class="section__primary-heading"><a href="https://teamtreehouse.com/ryanboone" target="_blank" rel="noopener noreferrer">Treehouse</a></h3>
-
-          <h4 class="section__secondary-heading">Active</h4>
-          <p>June 2013&ndash;June 2016</p>
-          <h4 class="section__secondary-heading">Subjects Studied</h4>
-          <ul class="list--arrow">
-            <li>Web Design</li>
-            <li>Web Development</li>
-            <li>Ruby on Rails</li>
-            <li>PHP</li>
-          </ul>
-
-          <h4 class="section__secondary-heading">Achievements</h4>
-          <ul class="list--arrow">
-            <li>341 Badges</li>
-            <li>26,500 Points Earned</li>
-          </ul>
-        </li>
-
-        <li>
-          <h3 class="section__primary-heading">Lamar University, Beaumont, TX</h3>
-
-          <h4 class="section__secondary-heading">Active</h4>
-          <p>August 1998&ndash;November 2002</p>
-          <h4 class="section__secondary-heading">Major</h4>
-          <p>B.S. in Communications with an emphasis in Broadcast/Film</p>
-
-          <h4 class="section__secondary-heading">Achievements</h4>
-          <ul class="list--arrow">
-            <li>SETCAST Scholarship</li>
-            <li>McFaddin-Ward Academic Scholarship</li>
-            <li>President’s List</li>
-            <li>Dean’s List</li>
-            <li>Graduated Summa Cum Laude</li>
-          </ul>
-        </li>
-      </ul>
-    </section>
-
-    <a id="contact" rel="bookmark"></a>
-    <section class="section section--contact">
-      <h2 class="section__title">Contact</h2>
-      <p>Is there something I haven’t answered? Please drop me a line in the form below and ask me anything. I promise to get back with you as soon as possible.</p>
-      
-      <div class="l-2-lg section--contact__group">
-        <!-- Refer to https://formspree.io for API documentation -->
-        <form class="form" action="https://formspree.io/falldowngoboone@gmail.com" method="POST">
-          <input type="hidden" name="_next" value="#" />
-          <input type="hidden" name="_subject" value="New submission!" />
-          <div class="input-group">
-            <label class="section__secondary-heading" for="name">Your Name</label>
-            <input id="name" name="name" type="text" required>
+          <div>
+            <h3 class="section__primary-heading">
+              Other Places You Can Find Me
+            </h3>
+            <ul class="list--arrow">
+              <li>
+                <a
+                  href="https://github.com/falldowngoboone"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >My Github profile</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://codepen.io/falldowngoboone/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >My Codepen profile</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.behance.net/ryanboone"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Some of my design work on Behance</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://www.falldowngoboone.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >falldowngoboone, my personal blog</a
+                >
+              </li>
+            </ul>
           </div>
-          <div class="input-group">
-            <label class="section__secondary-heading" for="email">Your Email</label>
-            <input id="email" name="email" type="email" required>
-          </div>
-          <input type="text" name="_gotcha" style="display:none" placeholder="Please leave me blank" />
-          <div class="input-group">
-            <label class="section__secondary-heading" for="message">Your Message</label>
-            <textarea name="message" id="message" cols="30" rows="10"></textarea>
-          </div>
-          <div class="input-group">
-            <button class="btn" type="submit">Send your message</button>
-          </div>
-        </form>
-
-        <div>
-          <h3 class="section__primary-heading">Other Places You Can Find Me</h3>
-          <ul class="list--arrow">
-            <li><a href="https://github.com/falldowngoboone" target="_blank" rel="noopener noreferrer">My Github profile</a></li>
-            <li><a href="http://codepen.io/falldowngoboone/" target="_blank" rel="noopener noreferrer">My Codepen profile</a></li>
-            <li><a href="https://www.behance.net/ryanboone" target="_blank" rel="noopener noreferrer">Some of my design work on Behance</a></li>
-            <li><a href="http://www.falldowngoboone.com" target="_blank" rel="noopener noreferrer">falldowngoboone, my personal blog</a></li>
-          </ul>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <footer class="page-footer">© <span id="copyright-date">2017</span> Ryan Boone</footer>
-  </main>
+      <footer class="page-footer">
+        © <span id="copyright-date">2017</span> Ryan Boone
+      </footer>
+    </main>
 
-  <script src="js/page.js"></script>
-</body>
+    <script src="js/page.js"></script>
+  </body>
 </html>
