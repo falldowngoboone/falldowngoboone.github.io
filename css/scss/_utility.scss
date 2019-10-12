@@ -9,9 +9,17 @@
 
 .u-sr-only {
   /* hide this */
-  clip: rect(1px, 1px, 1px, 1px); 
-  height: 1px; 
-  width: 1px; 
-  overflow: hidden; 
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
   position: absolute !important;
+}
+
+.u-nobreak {
+  white-space: nowrap;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
