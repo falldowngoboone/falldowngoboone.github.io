@@ -1,18 +1,15 @@
 onload = function() {
   var pageHeader = document.querySelector(".js-page-header"),
-    pageHeaderLogo = pageHeader.querySelector("page-header__logo"),
     nav = document.querySelector(".js-nav"),
     navLinks = nav.querySelectorAll("a"),
     bookmarks = document.querySelectorAll('a[rel="bookmark"]'),
     navToggleBtn = document.querySelector(".js-nav-toggle"),
     // page state
     currentScrollY = 0,
-    previousScrollY,
     ticking = false,
     navIsOpen = nav.classList.contains("is-open"),
-    currentSection = {},
     activeTargetOffset = 75,
-    bookmarkIds = ["#about", "#history", "#contact"],
+    bookmarkIds = ["#contact"],
     offsetMap = createOffsetMap(bookmarkIds);
 
   document.querySelector(
@@ -37,7 +34,15 @@ onload = function() {
           return b.id === linkEl.hash.slice(1);
         });
 
-        window.scroll(0, getOffsetTop(bookmark) - activeTargetOffset);
+        try {
+          window.scrollTo({
+            left: 0,
+            top: getOffsetTop(bookmark) - activeTargetOffset,
+            behavior: "smooth"
+          });
+        } catch (e) {
+          window.scroll(0, getOffsetTop(bookmark) - activeTargetOffset);
+        }
 
         if (navIsOpen) {
           toggleNavOpenClass();
@@ -123,9 +128,7 @@ onload = function() {
   // $TODO - pass in the node? and the class name? and the threshold?
   // probably just pass in an entire config object
   function toggleClassPastOffset() {
-    const changeInScrollPos = previousScrollY - currentScrollY,
-      triggerThreshold = 5,
-      offset = pageHeader.offsetHeight;
+    const offset = pageHeader.offsetHeight;
 
     // well, this _could_ use classList.toggle, but IE doesn't support the 2nd argument
     if (currentScrollY > offset) {

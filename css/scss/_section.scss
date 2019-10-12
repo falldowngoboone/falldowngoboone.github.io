@@ -101,14 +101,21 @@
 
 .section--contact__group {
   margin-top: $lh-space * 2;
+  display: grid;
+  grid-template-columns: auto;
+
+  @media screen and (min-width: $mq-lg) {
+    grid-template-columns: 2fr 1fr;
+  }
 }
 
 .section--contact input,
 .section--contact textarea {
-  border: none;
-  border-bottom: 7px solid $text-color;
+  background-color: transparent;
+  border: 2px solid $text-color;
   padding: 0.25rem;
   outline: none;
+  border-radius: 0;
 }
 
 .section__list > li {
@@ -141,11 +148,11 @@ p + .section__list {
   top: (1.25em / 1.375) * $line-height;
 
   font-family: $primary-font-stack;
-  font-weight: normal;
+  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.13em;
 
-  color: $primary-color--light;
+  color: $primary-color;
 }
 
 section:not(.section--experience) .section__secondary-heading {
